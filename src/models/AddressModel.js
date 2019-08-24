@@ -10,6 +10,12 @@ class Address {
         this.latitude = obj.latitude;
         this.longitude = obj.longitudeF;
     }
+    
+    getFormattedAddress(){
+    	return `${this.address1 || '' }, `${this.address2 || '' }, `${this.street || '' }, 
+	${this.state || '' }, ${this.country || '' }`	`
+    }
+
 
 }
 export default Address;
