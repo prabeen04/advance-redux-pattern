@@ -10,10 +10,19 @@ class Address {
         this.latitude = obj.latitude;
         this.longitude = obj.longitudeF;
     }
-    
-    getFormattedAddress(){
-    	return `${this.address1 || '' }, `${this.address2 || '' }, `${this.street || '' }, 
-	${this.state || '' }, ${this.country || '' }`	`
+
+    getFormattedAddress() {
+        return `${this.address1 || ''}, ${this.address2 || ''}, ${this.street || ''}, 
+                ${this.state || ''}, ${this.country || ''}`
+    }
+    city(){
+        return this.city;
+    }
+    state(){
+        return this.state;
+    }
+    country(){
+        return this.country;
     }
 
 
