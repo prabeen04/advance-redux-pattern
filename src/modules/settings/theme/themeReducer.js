@@ -5,10 +5,13 @@ const initialState = {
     themeType: 'light',
     theme: lightTheme,
 };
-export const themeReducer = (state=initialState, action) => {
+export const themeReducer = (state = initialState, action) => {
     switch (action.payload) {
         case types.SET_LIGHT_THEME:
-            return {...state, themeType: action.payload.themeType, theme: action.payload.theme}    
+            return { ...state, themeType: 'light', theme: action.payload };
+        case types.SET_DARK_THEME:
+            return { ...state, themeType: 'dark', theme: action.payload };
         default:
             throw new Error('invalid condition')
+    }
 }
