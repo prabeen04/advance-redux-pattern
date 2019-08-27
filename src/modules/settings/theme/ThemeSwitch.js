@@ -8,11 +8,6 @@ export default function ThemeSwitch(props) {
     const themeType = useSelector(({ theme }) => theme.themeType)
     const dispatch = useDispatch()
     const toggleTheme = useCallback(handleChange, [dispatch])
-    useEffect(() => {
-        themeType === 'light'
-            ? document.body.style.backgroundColor = '#f4f4f4'
-            : document.body.style.backgroundColor = '#222222'
-    }, [themeType])
 
     function handleChange(e, checked) {
         console.log(e, checked)
