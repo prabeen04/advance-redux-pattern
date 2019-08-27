@@ -6,8 +6,6 @@ import { lightTheme, darkTheme } from '../../../config/theme';
 
 export default function ThemeSwitch(props) {
     const themeType = useSelector(({ theme }) => theme.themeType)
-    const dispatch = useDispatch()
-    const toggleTheme = useCallback(handleChange, [dispatch])
 
     function handleChange(e, checked) {
         console.log(e, checked)
@@ -21,7 +19,7 @@ export default function ThemeSwitch(props) {
         <Fragment>
             <Switch
                 checked={themeType === 'light' ? false : true}
-                onChange={toggleTheme}
+                onChange={handleChange}
                 value="checkedA"
                 inputProps={{ 'aria-label': 'secondary checkbox' }}
             />
