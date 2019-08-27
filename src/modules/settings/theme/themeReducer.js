@@ -12,6 +12,7 @@ export const themeReducer = (state = initialState, action) => {
         case types.SET_DARK_THEME:
             return { ...state, themeType: 'dark', theme: action.payload };
         default:
-            throw new Error('invalid condition')
+            return state
+            // throw new Error('invalid condition')
     }
 }
