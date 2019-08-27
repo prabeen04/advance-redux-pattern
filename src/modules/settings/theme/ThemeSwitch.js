@@ -4,12 +4,19 @@ import Switch from '@material-ui/core/Switch';
 
 export default function ThemeSwitch(props) {
     const themeType = useSelector(({ theme }) => theme.themeType)
-    // alert(themeType)
+
+    function handleChange(checked) {
+        if (themeType === 'light') {
+
+        } else {
+
+        }
+    }
     return (
         <Fragment>
             <Switch
-                checked={true}
-                onChange={null}
+                checked={themeType === 'light' ? false : true}
+                onChange={handleChange}
                 value="checkedA"
                 inputProps={{ 'aria-label': 'secondary checkbox' }}
             />
