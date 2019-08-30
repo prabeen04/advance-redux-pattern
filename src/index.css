@@ -1,11 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text|Fira+Sans|Hepta+Slab|PT+Sans|Quicksand|Roboto&display=swap');
-body {
+html {
     margin: 0;
     font-family: Roboto, Crimson Text, Fira Sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
