@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useCallback } from 'react'
+import React, { Fragment } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import Switch from '@material-ui/core/Switch';
 import { setDarkTheme, setLightTheme } from "./themeAction";
@@ -9,15 +9,11 @@ export default function ThemeSwitch(props) {
     const dispatch = useDispatch();
 
     function handleChange(e, checked) {
-        console.log(e, checked)
-        //   (dispatch) =>   setDarkTheme(darkTheme)
-            if (themeType === 'light') {
-            setDarkTheme(darkTheme)(dispatch)
+        if (themeType === 'light') {
+            dispatch(setDarkTheme(darkTheme))
         } else {
-            setLightTheme(lightTheme)(dispatch)
-            // dispatch(() => setLightTheme(lightTheme))
-            // setLightTheme(lightTheme)
-        }
+            dispatch(setLightTheme(lightTheme))
+       }
     }
     return (
         <Fragment>
