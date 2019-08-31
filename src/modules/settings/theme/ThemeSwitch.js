@@ -6,13 +6,17 @@ import { lightTheme, darkTheme } from '../../../config/theme';
 
 export default function ThemeSwitch(props) {
     const themeType = useSelector(({ theme }) => theme.themeType)
+    const dispatch = useDispatch();
 
     function handleChange(e, checked) {
         console.log(e, checked)
-        if (checked) {
-            setDarkTheme(darkTheme)
+        //   (dispatch) =>   setDarkTheme(darkTheme)
+            if (themeType === 'light') {
+            setDarkTheme(darkTheme)(dispatch)
         } else {
-            setLightTheme(lightTheme)
+            setLightTheme(lightTheme)(dispatch)
+            // dispatch(() => setLightTheme(lightTheme))
+            // setLightTheme(lightTheme)
         }
     }
     return (
