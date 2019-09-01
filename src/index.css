@@ -1,7 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text|Fira+Sans|Hepta+Slab|PT+Sans|Quicksand|Roboto&display=swap');
-html {
+* {
     margin: 0;
+    padding: 0;
     font-family: Roboto, Crimson Text, Fira Sans;
+}
+
+html {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
