@@ -9,7 +9,7 @@ const FlexContainer = styled.div`
     justify-content: ${props => props.justifyContent || 'flex-start'};
     flex-grow: ${props => props.flexGrow || 1};
     flex-shrink: ${props => props.flexShrink || 1};
-    flex-basis: ${props => props.flexBasis || 'auto'}
+    flex-basis: ${props => props.flexBasis || 'auto'};
 `;
 
 export default FlexContainer;
