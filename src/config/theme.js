@@ -18,8 +18,8 @@ export const lightTheme = {
 
 export const darkTheme = {
     primaryColor: '#1890ff',
-    applicationBackground: '#001529',
-    applicationColor: '#fff',
+    applicationBackground: '#191E1D',
+    applicationColor: '#ddd',
     backgroundColor: 'rgba(121, 140, 173, 0.3)',
     borderBoxBgColor: '#001529',
     color: '#eeeeee',

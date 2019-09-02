@@ -4,8 +4,3 @@
     padding: 0;
     font-family: Roboto, Crimson Text, Fira Sans;
 }
-
-html {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
