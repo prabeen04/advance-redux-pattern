@@ -5,7 +5,7 @@ import store from "./store";
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import AppErrorBoundary from './components/ErrorBoundaries/AppErrorBoundary';
+import { AppErrorBoundary } from './components/ErrorBoundaries';
 
 ReactDOM.render(
     <Provider store={store}>

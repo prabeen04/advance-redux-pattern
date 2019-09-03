@@ -11,6 +11,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <ApplicationWrapper>
         <h1>Advance redux pattern</h1>
+        <button onClick={handleClick}>test</button>
         <ThemeSwitch />
       </ApplicationWrapper>
     </ThemeProvider>
