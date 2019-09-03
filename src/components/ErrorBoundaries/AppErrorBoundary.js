@@ -1,4 +1,5 @@
 import React from 'react';
+import { sentry } from '../../config/Sentry/Sentry';
 class AppErrorBoundary extends React.Component {
     constructor(props) {
         super(props);
@@ -12,6 +13,7 @@ class AppErrorBoundary extends React.Component {
 
     componentDidCatch(error, errorInfo) {
         // You can also log the error to an error reporting service
+        sentry.logToSentry(error)
         //   logErrorToMyService(error, errorInfo);
     }
 
