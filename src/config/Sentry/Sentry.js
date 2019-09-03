@@ -10,5 +10,13 @@ class SentryClass {
     initialize(dsn) {
         this.sentry.init({ dsn })
     }
+
+    logToSentry(err) {
+        this.sentry.captureException(err)
+    }
+
+    getInstance() {
+        return this.sentry
+    }
 }
 export const sentry = new SentryClass()
