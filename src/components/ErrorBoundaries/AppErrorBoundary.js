@@ -1,5 +1,20 @@
 import React from 'react';
 import { sentry } from '../../config/Sentry/Sentry';
+import styled from 'styled-components';
+
+const EBContainer = styled.div`
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    h1{
+        color: #222;
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+`
 class AppErrorBoundary extends React.Component {
     constructor(props) {
         super(props);
@@ -7,7 +22,6 @@ class AppErrorBoundary extends React.Component {
     }
 
     static getDerivedStateFromError(error) {
-        // Update state so the next render will show the fallback UI.
         return { hasError: true };
     }
 
@@ -19,8 +33,11 @@ class AppErrorBoundary extends React.Component {
 
     render() {
         if (this.state.hasError) {
-            // You can render any custom fallback UI
-            return <h1>Something went wrong.</h1>;
+            return (
+                <EBContainer>
+                    <h1>Something went wrong.</h1>
+                </EBContainer>
+            )
         }
 
         return this.props.children;
