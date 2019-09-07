@@ -14,6 +14,8 @@ export const lightTheme = {
     textShadowColor: '#aaa',
     tableHoverColor: '#acc3e6',
     tableHoverFontColor: '#000',
+    lightGreen: '#4caf50',
+    red: '#f44336', 
 }
 
 export const darkTheme = {
@@ -32,4 +34,6 @@ export const darkTheme = {
     textShadowColor: '#aaa',
     tableHoverColor: '#001529',
     tableHoverFontColor: '#fff',
+    lightGreen: '#4caf50',
+    red: '#f4433', 
 }

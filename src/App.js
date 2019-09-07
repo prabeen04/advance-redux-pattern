@@ -22,15 +22,15 @@ function App() {
 
             <JumpStartBox
               value={300}
-              title='Goals'
+              title='Goals scored'
             />
             <JumpStartBox
               value={28}
-              title='Wins'
+              title='Total wins'
             />
             <JumpStartBox
               value={5}
-              title='Loss'
+              title='Total lost'
             />
 
           </div>
