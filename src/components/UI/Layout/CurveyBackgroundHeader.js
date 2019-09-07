@@ -17,7 +17,7 @@ export default function CurveyBackgroundHeader(props) {
 const Header = styled.header`
     position: relative;
     height: 300px;
-    background-image: linear-gradient(#2196f3 , #6200ea);
+    background-image: linear-gradient(#42a5f5 , #311b92);
     border-radius: 0px 0px 100px 14px;
 `
 const SVG = styled.svg`

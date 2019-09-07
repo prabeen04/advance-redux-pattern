@@ -13,7 +13,7 @@ export default function ThemeSwitch(props) {
             dispatch(setDarkTheme(darkTheme))
         } else {
             dispatch(setLightTheme(lightTheme))
-       }
+        }
     }
     return (
         <Fragment>
@@ -22,6 +22,7 @@ export default function ThemeSwitch(props) {
                 onChange={handleChange}
                 value="checkedA"
                 inputProps={{ 'aria-label': 'secondary checkbox' }}
+                {...props}
             />
         </Fragment>
     )
