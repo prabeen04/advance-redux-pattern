@@ -10,7 +10,7 @@ export const lightTheme = {
     boxShadowColor: '#aaa',
     opacity: 1,
     titleColor: '#444',
-    subTitleColor: '#777',
+    subTitleColor: '#aaa',
     textShadowColor: '#aaa',
     tableHoverColor: '#acc3e6',
     tableHoverFontColor: '#000',
