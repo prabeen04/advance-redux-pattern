@@ -15,15 +15,19 @@ function App() {
           <div style={{ float: 'right' }}>
             <ThemeSwitch />
           </div>
-          <JumpStartBox>
-            <h3>BOX 1</h3>
-          </JumpStartBox>
-          <JumpStartBox>
-            <h3>BOX 1</h3>
-          </JumpStartBox>
-          <JumpStartBox>
-            <h3>BOX 1</h3>
-          </JumpStartBox>
+          <div style={{height: '100%',zIndex: 999, display: 'flex', 
+          justifyContent: 'center', alignItems:'center' }}>
+
+            <JumpStartBox>
+              <h3>BOX 1</h3>
+            </JumpStartBox>
+            <JumpStartBox>
+              <h3>BOX 1</h3>
+            </JumpStartBox>
+            <JumpStartBox>
+              <h3>BOX 1</h3>
+            </JumpStartBox>
+          </div>
         </CurveyBackgroundHeader>
       </ApplicationWrapper>
     </ThemeProvider>

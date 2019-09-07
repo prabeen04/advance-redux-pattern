@@ -13,6 +13,9 @@ const JumpStartWrapper = styled.div`
     width: 250px;
     display: flex;
     height: 100px;
-    background-color: #fff;
-    border-radius: 0.3rem;
+    background-color: ${props => props.theme.backgroundColor};
+    border-radius: 0.5rem;
+    margin: 0 20px;
+    padding: 0.5rem;
+    color: ${props => props.theme.color}
 `;
