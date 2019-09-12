@@ -28,7 +28,7 @@ export default function JumpStartBox(props) {
                 <ChartContainer>
                     <LineChart width={100} data={data}>
                         <Line type='monotone' dataKey='pv' stroke='#8884d8' strokeWidth={1} />
-                        <Tooltip/>
+                        <Tooltip />
                     </LineChart>
                 </ChartContainer>
             </Container>
@@ -43,7 +43,7 @@ const JumpStartWrapper = styled.div`
     margin: 0 20px;
     padding: 1rem;
     display: flex;
-    flex-direction: column;
+    flex-direction:column;
 `;
 const Value = styled.h1`
     color: ${props => props.theme.titleColor};

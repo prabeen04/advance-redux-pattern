@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { useSelector } from "react-redux";
 import styled from 'styled-components';
+
 export default function CurveyBackgroundHeader(props) {
     const theme = useSelector(state => state.theme.theme)
     return (
