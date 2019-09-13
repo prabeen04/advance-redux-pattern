@@ -32,16 +32,15 @@ class ProgressiveImage extends Component {
         this.loadingImage = image
     }
 
-    style = loading => {
-        return {
-            transition: '0.5s filter linear',
-            filter: `${loading ? 'blur(20px)' : ''}`,
-            width: this.props.width || '100%',
-            height: this.props.height || '100%',
-            padding: `${loading ? '20px' : ''}`,
-            borderRadius: this.props.borderRadius || 0,
-        }
-    }
+    style = loading => ({
+        transition: '0.5s filter linear',
+        filter: `${loading ? 'blur(20px)' : ''}`,
+        width: this.props.width || '100%',
+        height: this.props.height || '100%',
+        padding: `${loading ? '20px' : ''}`,
+        borderRadius: this.props.borderRadius || 0,
+    })
+
     render() {
         const { currentImage, loading } = this.state
         const { alt } = this.props
