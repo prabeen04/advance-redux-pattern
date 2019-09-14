@@ -6,13 +6,15 @@ import './App.css';
 import CurveyBackgroundHeader from './components/UI/Layout/CurveyBackgroundHeader';
 import ThemeSwitch from './modules/settings/theme/ThemeSwitch'
 import { JumpStartBox } from './components/UI/Elements';
+import Navbar from './modules/Nav/Navbar';
 function App() {
   const theme = useSelector(({ theme }) => theme.theme)
   return (
     <ThemeProvider theme={theme}>
       <ApplicationWrapper>
         <CurveyBackgroundHeader>
-          <div style={{ float: 'right' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Navbar />
             <ThemeSwitch />
           </div>
           <div style={{

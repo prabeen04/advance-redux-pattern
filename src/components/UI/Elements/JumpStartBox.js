@@ -44,6 +44,7 @@ const JumpStartWrapper = styled.div`
     padding: 1rem;
     display: flex;
     flex-direction:column;
+    z-index: inherit;
 `;
 const Value = styled.h1`
     color: ${props => props.theme.titleColor};

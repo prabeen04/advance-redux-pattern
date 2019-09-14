@@ -17,13 +17,15 @@ const NavbarWrapper = styled.div`
     display: flex;
     justify-content: center;
     background: transparent;
+    width: 600px;
 
 `;
 const NavbarList = styled.ul`
     list-style: none;
+    display: flex;
 `
 const NavItem = styled.li`
-    color: #fff;
+    color: #f4f4f4;
     font-size: 1.2rem;
     padding: 0.3rem;
 `
