@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 export default function Navbar() {
     return (
         <NavbarWrapper>
             <NavbarList>
-                <NavItem>  Home  </NavItem>
-                <NavItem>  Portal  </NavItem>
-                <NavItem>  Blog  </NavItem>
+                <NavItem> <NavLink> Home </NavLink> </NavItem>
+                <NavItem> <NavLink> Portal </NavLink> </NavItem>
+                <NavItem> <NavLink> Blog </NavLink> </NavItem>
             </NavbarList>
         </NavbarWrapper>
     )
@@ -25,7 +26,17 @@ const NavbarList = styled.ul`
     display: flex;
 `
 const NavItem = styled.li`
-    color: #f4f4f4;
+    padding: 0.3rem 0.5rem;
+`
+const NavLink = styled(Link)`
+    color: #fff;
     font-size: 1.2rem;
-    padding: 0.3rem;
+    text-decoration: none;
+    padding-bottom: 0.3rem;
+    transition: 0.03s all linear;
+    transform: scale(1.3);
+    :hover{
+        color: #eee;
+        border-bottom: 3px solid #fff;
+    }
 `
