@@ -26,17 +26,14 @@ const NavbarList = styled.ul`
     display: flex;
 `
 const NavItem = styled.li`
-    padding: 0.3rem 0.5rem;
+    padding: 0.3rem 1rem;
 `
 const NavLink = styled(Link)`
     color: #fff;
     font-size: 1.2rem;
     text-decoration: none;
     padding-bottom: 0.3rem;
-    transition: 0.03s all linear;
-    transform: scale(1.3);
     :hover{
         color: #eee;
-        border-bottom: 3px solid #fff;
     }
 `
