@@ -7,6 +7,7 @@ import CurveyBackgroundHeader from './components/UI/Layout/CurveyBackgroundHeade
 import ThemeSwitch from './modules/settings/theme/ThemeSwitch'
 import { JumpStartBox } from './components/UI/Elements';
 import Navbar from './modules/Nav/Navbar';
+import Routes from './modules/Routes/Routes';
 function App() {
   const theme = useSelector(({ theme }) => theme.theme)
   return (
@@ -37,6 +38,7 @@ function App() {
 
           </div>
         </CurveyBackgroundHeader>
+        <Routes />
       </ApplicationWrapper>
     </ThemeProvider>
   );
