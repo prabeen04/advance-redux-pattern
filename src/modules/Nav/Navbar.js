@@ -6,9 +6,9 @@ export default function Navbar() {
     return (
         <NavbarWrapper>
             <NavbarList>
-                <NavItem> <NavLink> Home </NavLink> </NavItem>
-                <NavItem> <NavLink> Portal </NavLink> </NavItem>
-                <NavItem> <NavLink> Blog </NavLink> </NavItem>
+                <NavItem> <NavLink to='/'> Home </NavLink> </NavItem>
+                <NavItem> <NavLink to='/portal'> Portal </NavLink> </NavItem>
+                <NavItem> <NavLink to='/blog'> Blog </NavLink> </NavItem>
             </NavbarList>
         </NavbarWrapper>
     )
