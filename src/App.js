@@ -13,31 +13,10 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <ApplicationWrapper>
-        <CurveyBackgroundHeader>
-          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <Navbar />
-            <ThemeSwitch />
-          </div>
-          <div style={{
-            height: '100%', zIndex: 999, display: 'flex',
-            justifyContent: 'center', alignItems: 'center'
-          }}>
-
-            <JumpStartBox
-              value={300}
-              title='Goals scored'
-            />
-            <JumpStartBox
-              value={28}
-              title='Total wins'
-            />
-            <JumpStartBox
-              value={5}
-              title='Total lost'
-            />
-
-          </div>
-        </CurveyBackgroundHeader>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Navbar />
+          <ThemeSwitch />
+        </div>
         <Routes />
       </ApplicationWrapper>
     </ThemeProvider>
