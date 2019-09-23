@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
+import ThemeSwitch from "../settings/theme/ThemeSwitch";
 
 export default function Navbar() {
     return (
@@ -10,15 +11,20 @@ export default function Navbar() {
                 <NavItem> <NavLink to='/portal'> Portal </NavLink> </NavItem>
                 <NavItem> <NavLink to='/blog'> Blog </NavLink> </NavItem>
             </NavbarList>
+            <ThemeSwitch />
         </NavbarWrapper>
     )
 }
 
 const NavbarWrapper = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background: transparent;
-    width: 600px;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 6200;
 
 `;
 const NavbarList = styled.ul`
