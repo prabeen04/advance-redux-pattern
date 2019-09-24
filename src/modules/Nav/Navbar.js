@@ -19,13 +19,9 @@ export default function Navbar() {
 const NavbarWrapper = styled.div`
     display: flex;
     justify-content: space-between;
-    background: transparent;
+    background: #42a5f5;
     width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 6200;
-
+    padding: 0.3rem;
 `;
 const NavbarList = styled.ul`
     list-style: none;
