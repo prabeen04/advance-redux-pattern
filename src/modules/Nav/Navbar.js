@@ -34,7 +34,6 @@ const NavLink = styled(Link)`
     color: #fff;
     font-size: 1.2rem;
     text-decoration: none;
-    padding-bottom: 0.3rem;
     :hover{
         color: #eee;
     }
