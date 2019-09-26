@@ -2,11 +2,11 @@ import React from 'react'
 import styled from 'styled-components';
 
 const blogs = [
-  { title: 'title1', desc: 'description1' },
-  { title: 'title2', desc: 'description2' },
-  { title: 'title3', desc: 'description3' },
-  { title: 'title4', desc: 'description4' },
-  { title: 'title5', desc: 'description5' },
+  { title: 'Title1', desc: 'Description 1 lorem pixel losus erprie sekjrn' },
+  { title: 'Title2', desc: 'Description 2' },
+  { title: 'Title3', desc: 'Description 3' },
+  { title: 'Title4', desc: 'Description 4' },
+  { title: 'Title5', desc: 'Description 5' },
 ]
 
 export default function Blog(props) {
@@ -15,8 +15,8 @@ export default function Blog(props) {
       {
         blogs.map((blog, i) => (
           <BlogItem>
-            <p>{blog.title}</p>
-            <p>{blog.desc}</p>
+            <BlogTitle>{blog.title}</BlogTitle>
+            <Description>{blog.desc}</Description>
           </BlogItem>
         ))
       }
@@ -32,8 +32,25 @@ const BlogWrapper = styled.div`
 const BlogItem = styled.div`
   display: flex;
   flex-direction: column;
+  width: 200px;
   background-color: #fff;
-  padding: 1rem;
+  padding: 0.5rem;
   border-radius: 0.3rem;
   margin: 0.3rem;
+`;
+
+const BlogTitle = styled.h1`
+  display: flex;
+  justify-content:center;
+  color: #666;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  padding: 0.2rem 0.4rem;
+  margin-bottom: 0.3rem;
+  background-color: #f4f4f4;
+`;
+
+const Description = styled.p`
+  color: #888;
+  font-size: 0.9rem;
 `;
