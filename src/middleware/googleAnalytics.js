@@ -1,5 +1,5 @@
 const GAMiddleware = store => next => action => {
-  if (action.meta.analytics) {
+  if (action.meta && action.meta.analytics) {
     console.log('GA called')
     return next(action)
   }
