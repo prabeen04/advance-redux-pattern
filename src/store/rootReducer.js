@@ -4,7 +4,7 @@ import { } from "module";
 import { createReducers } from './utils/createReducers';
 import { GET_BLOGS, GET_BLOG_BY_ID } from '../modules/Blog/BlogActionTypes';
 
-const STATES = {
+export const STATES = {
     BLOG: 'blog'
 }
 export const rootReducer = combineReducers({
