@@ -12,7 +12,6 @@ export default function useFonoApi() {
     })
       .then(res => {
         window.resp = res
-        debugger
         res.json()
       }
       )
