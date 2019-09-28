@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
+import { useDispatch, useSelector } from "react-redux";
+import { selectAllBlogs } from './BlogSelector';
+import { getBlogs } from './BlogAction';
 
 export default function Blog(props) {
+  const { data, isLoading } = useSelector(selectAllBlogs)
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(getBlogs())
+  }, [])
   return (
     <BlogWrapper>
       {

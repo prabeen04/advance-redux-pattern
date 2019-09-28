@@ -1,7 +1,7 @@
 import { startActionTypes, successActionTypes, errorActionTypes } from "./createActionTypes"
 
 export const createAction = (reducerName, asyncFunc) =>
-  async (getState, dispatch) => {
+  async (dispatch, getState) => {
     dispatch({ type: startActionTypes(reducerName) })
     try {
       const data = await asyncFunc()
