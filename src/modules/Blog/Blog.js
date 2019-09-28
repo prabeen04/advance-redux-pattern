@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import useFonoApi from '../../Hooks/useFonoApi';
 
 const blogs = [
   { title: 'Title1', desc: 'Description 1 lorem pixel losus erprie sekjrn' },
@@ -10,6 +11,8 @@ const blogs = [
 ]
 
 export default function Blog(props) {
+  const blogs2 = useFonoApi()
+  debugger
   return (
     <BlogWrapper>
       {
