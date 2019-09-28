@@ -1,22 +1,11 @@
 import React from 'react'
 import styled from 'styled-components';
-import useFonoApi from '../../Hooks/useFonoApi';
-
-const blogs = [
-  { title: 'Title1', desc: 'Description 1 lorem pixel losus erprie sekjrn' },
-  { title: 'Title2', desc: 'Description 2' },
-  { title: 'Title3', desc: 'Description 3' },
-  { title: 'Title4', desc: 'Description 4' },
-  { title: 'Title5', desc: 'Description 5' },
-]
 
 export default function Blog(props) {
-  const blogs2 = useFonoApi()
-  debugger
   return (
     <BlogWrapper>
       {
-        blogs.map((blog, i) => (
+        [].map((blog, i) => (
           <BlogItem>
             <BlogTitle>{blog.title}</BlogTitle>
             <Description>{blog.desc}</Description>

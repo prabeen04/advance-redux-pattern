@@ -1,4 +1,4 @@
-class Blog {
+class BlogModel {
   constructor(data) {
     this.title = data.title;
     this.description = data.description;
@@ -6,7 +6,7 @@ class Blog {
     this.author = this.author
   }
   static from(obj) {
-    return new Blog({
+    return new BlogModel({
       title: obj.title,
       description: obj.description,
       createdAt: obj.createdAt,
@@ -17,4 +17,4 @@ class Blog {
     return data.map(d => this.from(d))
   }
 }
-export default Blog;
+export default BlogModel;
