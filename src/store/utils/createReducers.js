@@ -8,19 +8,19 @@ const getInitialState = _ => ({
 export const createReducers = reducerName => (state = getInitialState(), action) => {
   const { type, payload } = action
   switch (type) {
-    case startActionTypes(type):
+    case startActionTypes(reducerName):
       return {
         ...state,
         isLoading: true
       }
-    case successActionTypes(type):
+    case successActionTypes(reducerName):
       return {
         ...state,
         isLoading: false,
         data: payload.data,
         error: null
       }
-    case errorActionTypes(type):
+    case errorActionTypes(reducerName):
       return {
         ...state,
         isLoading: false,
