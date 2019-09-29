@@ -10,13 +10,14 @@ export default function Blog(props) {
   useEffect(() => {
     dispatch(getBlogs())
   }, [])
+  if (isLoading) return <p>Loading...</p>
   return (
     <BlogWrapper>
       {
-        [].map((blog, i) => (
+        data && data.map((blog, i) => (
           <BlogItem>
             <BlogTitle>{blog.title}</BlogTitle>
-            <Description>{blog.desc}</Description>
+            <Description>{blog.description}</Description>
           </BlogItem>
         ))
       }
