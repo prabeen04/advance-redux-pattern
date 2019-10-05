@@ -1,5 +1,6 @@
 class BlogModel {
   constructor(data) {
+    this.id = data.id;
     this.title = data.title;
     this.description = data.description;
     this.createdAt = data.createdAt;
@@ -7,6 +8,7 @@ class BlogModel {
   }
   static from(obj) {
     return new BlogModel({
+      id: obj.id,
       title: obj.title,
       description: obj.description,
       createdAt: obj.createdAt,

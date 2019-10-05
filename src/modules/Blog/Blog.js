@@ -1,21 +1,23 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { selectAllBlogs } from './BlogSelector';
 import { getBlogs } from './BlogAction';
 
 export default function Blog(props) {
   const { data, isLoading } = useSelector(selectAllBlogs)
   const dispatch = useDispatch()
+  const history = useHistory()
   useEffect(() => {
     dispatch(getBlogs())
   }, [])
   if (isLoading) return <p>Loading...</p>
   return (
-    <BlogWrapper>
+    <BlogWrapper >
       {
         data && data.map((blog, i) => (
-          <BlogItem>
+          <BlogItem onClick={() => history.push(`/blog/${blog.id}`)}>
             <BlogTitle>{blog.title}</BlogTitle>
             <Description>{blog.description}</Description>
           </BlogItem>
@@ -38,6 +40,7 @@ const BlogItem = styled.div`
   padding: 0.5rem;
   border-radius: 0.3rem;
   margin: 0.3rem;
+  cursor: pointer;
 `;
 
 const BlogTitle = styled.h1`
