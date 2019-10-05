@@ -12,7 +12,7 @@ const BlogService = {
     return BlogModel.fromAll(blogs)
   },
   getBlogById(id) {
-    const currentBlog = blogs.find(blog => blog.id === id)
+    const currentBlog = blogs.find(blog => blog.id == id)
     return BlogModel.from(currentBlog)
   }
 }
