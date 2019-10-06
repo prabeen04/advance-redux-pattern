@@ -10,10 +10,14 @@ export default function BlogDetail(props) {
   useEffect(() => {
     dispatch(getBlogById(id))
   }, [id])
+  if (!data) return null
+  if (isLoading) return <p>Loading...</p>
   return (
     <div>
       <h2>Blog Detail component</h2>
-      <p>blog id: {id}</p>
+      <p>ID: {data.id}</p>
+      <p>TITLE: {data.title}</p>
+      <p>DESCRIPTION: {data.description}</p>
     </div>
   )
 }
