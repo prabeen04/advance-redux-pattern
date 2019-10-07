@@ -23,22 +23,25 @@ export default function BlogDetail(props) {
   if (isLoading) return <p>Loading...</p>
   return (
     <div>
+      <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0.3rem' }}>
+
+        <Button
+          color='primary'
+          disabled={blogId > blogList.length || blogId == 1}
+          variant="contained"
+          onClick={() => {
+            setBlogId(Number(blogId) - 1)
+            props.history.push(`/blog/${Number(blogId) - 1}`)
+          }}>prev</Button>&nbsp;
       <Button
-        color='primary'
-        disabled={blogId > blogList.length}
-        variant="contained"
-        onClick={() => {
-          setBlogId(Number(blogId) - 1)
-          props.history.push(`/blog/${Number(blogId) - 1}`)
-        }}>prev</Button>
-      <Button
-        color='primary'
-        disabled={blogId == blogList.length || blogId < 0}
-        variant="contained"
-        onClick={() => {
-          setBlogId(Number(blogId) + 1)
-          props.history.push(`/blog/${Number(blogId) + 1}`)
-        }}>Next</Button>
+          color='primary'
+          disabled={blogId == blogList.length || blogId < 0}
+          variant="contained"
+          onClick={() => {
+            setBlogId(Number(blogId) + 1)
+            props.history.push(`/blog/${Number(blogId) + 1}`)
+          }}>Next</Button>
+      </div>
       <h2>Blog Detail component</h2>
       <p>ID: {data.id}</p>
       <p>TITLE: {data.title}</p>
