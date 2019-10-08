@@ -42,10 +42,10 @@ export default function BlogDetail(props) {
             props.history.push(`/blog/${Number(blogId) + 1}`)
           }}>Next</Button>
       </div>
-      <h2>Blog Detail component</h2>
-      <p>ID: {data.id}</p>
-      <p>TITLE: {data.title}</p>
-      <p>DESCRIPTION: {data.description}</p>
+      <h2>{data.title}</h2>
+      <p><b>ID:</b> {data.id}</p>
+      <p><b>TITLE:</b> {data.title}</p>
+      <p><b>DESCRIPTION:</b> {data.description}</p>
     </div>
   )
 }
