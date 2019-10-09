@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import styled from 'styled-components';
 import { selectBlogById, selectAllBlogs } from '../BlogSelector';
 import { getBlogById, getBlogs, } from '../BlogAction';
 export default function BlogDetail(props) {
@@ -23,8 +24,7 @@ export default function BlogDetail(props) {
   if (isLoading) return <p>Loading...</p>
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'flex-end', padding: '0.3rem' }}>
-
+      <HeaderContainer>
         <Button
           color='primary'
           disabled={blogId > blogList.length || blogId == 1}
@@ -41,11 +41,22 @@ export default function BlogDetail(props) {
             setBlogId(Number(blogId) + 1)
             props.history.push(`/blog/${Number(blogId) + 1}`)
           }}>Next</Button>
-      </div>
-      <h2>{data.title}</h2>
+      </HeaderContainer>
+      <BlogTitle>{data.title}</BlogTitle>
       <p><b>ID:</b> {data.id}</p>
       <p><b>TITLE:</b> {data.title}</p>
       <p><b>DESCRIPTION:</b> {data.description}</p>
     </div>
   )
 }
+
+const HeaderContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.3rem;
+`
+const BlogTitle = styled.h1`
+  margin: 0 auto;
+  font-size: 26px;
+  color: #444;
+`
