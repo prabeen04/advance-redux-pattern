@@ -42,10 +42,8 @@ export default function BlogDetail(props) {
             props.history.push(`/blog/${Number(blogId) + 1}`)
           }}>Next</Button>
       </HeaderContainer>
-      <BlogTitle>{data.title}</BlogTitle>
-      <p><b>ID:</b> {data.id}</p>
-      <p><b>TITLE:</b> {data.title}</p>
-      <p><b>DESCRIPTION:</b> {data.description}</p>
+      <BlogTitle>{data.id}.{data.title}</BlogTitle>
+      <p> {data.description}</p>
     </div>
   )
 }
@@ -58,5 +56,5 @@ const HeaderContainer = styled.div`
 const BlogTitle = styled.h1`
   margin: 0 auto;
   font-size: 26px;
-  color: #444;
+  color: ${props => props.theme.color};
 `
