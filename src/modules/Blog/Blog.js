@@ -36,7 +36,7 @@ const BlogItem = styled.div`
   display: flex;
   flex-direction: column;
   width: 200px;
-  background-color: #fff;
+  background-color: ${props => props.theme.backgroundColor};
   padding: 0.5rem;
   border-radius: 0.3rem;
   margin: 0.3rem;
@@ -45,16 +45,16 @@ const BlogItem = styled.div`
 
 const BlogTitle = styled.h1`
   display: flex;
-  justify-content:center;
-  color: #666;
+  /* justify-content:center; */
+  color: ${props => props.theme.titleColor};
   font-size: 1.2rem;
   letter-spacing: 2px;
   padding: 0.2rem 0.4rem;
   margin-bottom: 0.3rem;
-  background-color: #f4f4f4;
+  /* background-color: #f4f4f4; */
 `;
 
 const Description = styled.p`
-  color: #888;
+  color: ${props => props.theme.subtitleColor};
   font-size: 0.9rem;
 `;

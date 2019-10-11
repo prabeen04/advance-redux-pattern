@@ -10,12 +10,12 @@ export const lightTheme = {
     boxShadowColor: '#aaa',
     opacity: 1,
     titleColor: '#444',
-    subTitleColor: '#aaa',
+    subtitleColor: '#aaa',
     textShadowColor: '#aaa',
     tableHoverColor: '#acc3e6',
     tableHoverFontColor: '#000',
     lightGreen: '#4caf50',
-    red: '#f44336', 
+    red: '#f44336',
 }
 
 export const darkTheme = {
@@ -30,10 +30,10 @@ export const darkTheme = {
     boxShadowColor: '#001529',
     opacity: 0.3,
     titleColor: '#ddd',
-    subTitleColor: '#aaa',
+    subtitleColor: '#aaa',
     textShadowColor: '#aaa',
     tableHoverColor: '#001529',
     tableHoverFontColor: '#fff',
     lightGreen: '#4caf50',
-    red: '#f4433', 
+    red: '#f4433',
 }
