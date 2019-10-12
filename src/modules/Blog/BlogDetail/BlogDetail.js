@@ -21,17 +21,17 @@ export default function BlogDetail(props) {
   useEffect(() => {
     setBlogId(id);
     dispatch(getBlogs());
-  }, []);
+  }, [id]);
   useEffect(() => {
     dispatch(getBlogById(blogId));
-  }, [blogId]);
+  }, [blogId, id]);
   if (!data) return null;
   if (isLoading) return <p>Loading...</p>;
   return (
     <div>
       <HeaderContainer>
         <Button
-          color="primary"
+          color="secondary"
           variant="contained"
           onClick={() => props.history.push(`/blog`)}
         >
@@ -39,7 +39,7 @@ export default function BlogDetail(props) {
         </Button>
         <div>
           <Button
-            color="primary"
+            color="secondary"
             disabled={blogId > blogList.length || blogId == 1}
             variant="contained"
             onClick={() => {
@@ -51,7 +51,7 @@ export default function BlogDetail(props) {
           </Button>
           &nbsp;
           <Button
-            color="primary"
+            color="secondary"
             disabled={blogId == blogList.length || blogId < 0}
             variant="contained"
             onClick={() => {
