@@ -16,15 +16,16 @@ export default function BlogDetail(props) {
   const [blogId, setBlogId] = useState(null);
   const { data, isLoading } = useSelector(selectBlogById);
   const blogList = useSelector(selectAllBlogs).data;
-  debugger;
 
   useEffect(() => {
     setBlogId(id);
     dispatch(getBlogs());
   }, [id]);
+
   useEffect(() => {
     dispatch(getBlogById(blogId));
   }, [blogId, id]);
+
   if (!data) return null;
   if (isLoading) return <p>Loading...</p>;
   return (
