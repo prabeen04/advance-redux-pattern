@@ -2,6 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Button } from "@material-ui/core";
+import {
+  ArrowBackIos,
+  ArrowForwardIos,
+  KeyboardReturn
+} from "@material-ui/icons";
 import styled from "styled-components";
 import { selectBlogById, selectAllBlogs } from "../BlogSelector";
 import { getBlogById, getBlogs } from "../BlogAction";
@@ -30,7 +35,7 @@ export default function BlogDetail(props) {
           variant="contained"
           onClick={() => props.history.push(`/blog`)}
         >
-          back
+          <KeyboardReturn />
         </Button>
         <div>
           <Button
@@ -42,7 +47,7 @@ export default function BlogDetail(props) {
               props.history.push(`/blog/${Number(blogId) - 1}`);
             }}
           >
-            prev
+            <ArrowBackIos />
           </Button>
           &nbsp;
           <Button
@@ -54,7 +59,7 @@ export default function BlogDetail(props) {
               props.history.push(`/blog/${Number(blogId) + 1}`);
             }}
           >
-            Next
+            <ArrowForwardIos />
           </Button>
         </div>
       </HeaderContainer>
