@@ -8,7 +8,6 @@ export default function Navbar() {
         <NavbarWrapper>
             <NavbarList>
                 <NavItem> <NavLink to='/'> Home </NavLink> </NavItem>
-                <NavItem> <NavLink to='/portal'> Portal </NavLink> </NavItem>
                 <NavItem> <NavLink to='/blog'> Blog </NavLink> </NavItem>
             </NavbarList>
             <ThemeSwitch />
