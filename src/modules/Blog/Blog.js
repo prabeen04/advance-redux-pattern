@@ -51,7 +51,7 @@ const BlogTitle = styled.h1`
   letter-spacing: 2px;
   padding: 0.2rem 0.4rem;
   margin-bottom: 0.3rem;
-  /* background-color: #f4f4f4; */
+  background-color: rgba(0,0,0,0.05);
 `;
 
 const Description = styled.p`
