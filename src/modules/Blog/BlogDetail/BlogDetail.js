@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { Button } from "@material-ui/core";
-import {
-  ArrowBackIos,
-  ArrowForwardIos,
-  KeyboardReturn
-} from "@material-ui/icons";
 import styled from "styled-components";
 import { selectBlogById, selectAllBlogs } from "../BlogSelector";
 import { getBlogById, getBlogs } from "../BlogAction";
+import {
+  KeyboardReturnIcon,
+  ArrowBackIosIcon,
+  ArrowForwardIosIcon
+} from "../../../components/Icons/Icons";
 export default function BlogDetail(props) {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -31,37 +31,23 @@ export default function BlogDetail(props) {
   return (
     <div>
       <HeaderContainer>
-        <Button
-          color="secondary"
-          variant="contained"
-          onClick={() => props.history.push(`/blog`)}
-        >
-          <KeyboardReturn />
-        </Button>
+        <KeyboardReturnIcon onClick={() => props.history.push(`/blog`)} />
         <div>
-          <Button
-            color="secondary"
+          <ArrowBackIosIcon
             disabled={blogId > blogList.length || blogId == 1}
-            variant="contained"
             onClick={() => {
               setBlogId(Number(blogId) - 1);
               props.history.push(`/blog/${Number(blogId) - 1}`);
             }}
-          >
-            <ArrowBackIos />
-          </Button>
+          />
           &nbsp;
-          <Button
-            color="secondary"
+          <ArrowForwardIosIcon
             disabled={blogId == blogList.length || blogId < 0}
-            variant="contained"
             onClick={() => {
               setBlogId(Number(blogId) + 1);
               props.history.push(`/blog/${Number(blogId) + 1}`);
             }}
-          >
-            <ArrowForwardIos />
-          </Button>
+          />
         </div>
       </HeaderContainer>
       <BlogTitle>
