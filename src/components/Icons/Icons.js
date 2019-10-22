@@ -7,15 +7,19 @@ import {
 } from "@material-ui/icons";
 
 function DefaultIcon(props) {
-  const {} = props;
-  return <IconWrapper {...props}>{props.children}</IconWrapper>;
+  const { disabled, onClick, ...rest } = props;
+  return (
+    <IconWrapper onClick={!disabled ? onClick : null} {...rest}>
+      {props.children}
+    </IconWrapper>
+  );
 }
 function generateIcon(IconComponent) {
   return props => {
     const { iconProps = {}, ...restProps } = props;
     return (
       <DefaultIcon {...restProps}>
-        <IconComponent fontSize={"inherit"} {...iconProps} />
+        <IconComponent fontSize={"18px"} {...iconProps} />
       </DefaultIcon>
     );
   };
@@ -28,7 +32,7 @@ export const KeyboardReturnIcon = generateIcon(KeyboardReturn);
 const IconWrapper = styled.span`
   /* background-color: ${props => props.bgColor || "#fff"}; */
   border-radius: ${props => props.borderRadius || 0};
-  opacity: ${props => (props.disabled ? 0.5 : 1)};
+  opacity: ${props => (props.onClick && !props.disabled ? 1 : 0.5)};
   box-shadow: #dddddd 0 6px 6px -6px inset;
   cursor: ${props => (props.onClick && !props.disabled ? "pointer" : "")};
 `;
