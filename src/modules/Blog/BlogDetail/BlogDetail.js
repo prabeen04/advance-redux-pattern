@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Button } from "@material-ui/core";
+import { Button, Breadcrumbs, Link, Typography } from "@material-ui/core";
 import styled from "styled-components";
 import { selectBlogById, selectAllBlogs } from "../BlogSelector";
 import { getBlogById, getBlogs } from "../BlogAction";
@@ -31,7 +31,16 @@ export default function BlogDetail(props) {
   return (
     <div>
       <HeaderContainer>
-        <KeyboardReturnIcon onClick={() => props.history.push(`/blog`)} />
+        <div style={{ display: "flex" }}>
+          <KeyboardReturnIcon onClick={() => props.history.push(`/blog`)} />{" "}
+          &nbsp;
+          <Breadcrumbs aria-label="breadcrumb">
+            <Link color="inherit" onClick={() => props.history.push("/blog")}>
+              Blog
+            </Link>
+            <Typography color="textPrimary">{blogId}</Typography>
+          </Breadcrumbs>
+        </div>
         <div>
           <ArrowBackIosIcon
             disabled={blogId > blogList.length || blogId == 1}
