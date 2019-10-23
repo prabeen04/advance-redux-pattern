@@ -33,7 +33,7 @@ export default function BlogDetail(props) {
       <HeaderContainer>
         <div style={{ display: "flex" }}>
           <KeyboardReturnIcon onClick={() => props.history.push(`/blog`)} />{" "}
-          &nbsp;
+          &nbsp;&nbsp;&nbsp;
           <Breadcrumbs aria-label="breadcrumb">
             <Link color="inherit" onClick={() => props.history.push("/blog")}>
               Blog
