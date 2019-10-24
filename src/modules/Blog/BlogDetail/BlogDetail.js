@@ -10,6 +10,7 @@ import {
   ArrowBackIosIcon,
   ArrowForwardIosIcon
 } from "../../../components/Icons/Icons";
+import Card from "../../../components/UI/Layout/Card";
 export default function BlogDetail(props) {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -59,10 +60,12 @@ export default function BlogDetail(props) {
           />
         </div>
       </HeaderContainer>
-      <BlogTitle>
-        {data.id}.{data.title}
-      </BlogTitle>
-      <p> {data.description}</p>
+      <Card>
+        <BlogTitle>
+          {data.id}.{data.title}
+        </BlogTitle>
+        <BlogDescription> {data.description}</BlogDescription>
+      </Card>
     </div>
   );
 }
@@ -78,6 +81,10 @@ const HeaderContainer = styled.div`
 `;
 const BlogTitle = styled.h1`
   margin: 0 auto;
-  font-size: 26px;
-  color: ${props => props.theme.color};
+  font-size: 20px;
+  color: ${props => props.theme.titleColor};
+`;
+const BlogDescription = styled.p`
+  font-size: 16px;
+  color: ${props => props.theme.subtitleColor};
 `;
