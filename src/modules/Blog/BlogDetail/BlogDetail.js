@@ -71,6 +71,10 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0.3rem;
+  margin: 0.4rem;
+  border-radius: 0.2rem;
+  background-color: ${props => props.theme.backgroundColor};
+  box-shadow: 0 1px 4px 1px ${props => props.theme.boxShadowColor};
 `;
 const BlogTitle = styled.h1`
   margin: 0 auto;

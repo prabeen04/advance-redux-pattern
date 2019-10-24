@@ -30,12 +30,9 @@ export const ArrowForwardIosIcon = generateIcon(ArrowForwardIos);
 export const KeyboardReturnIcon = generateIcon(KeyboardReturn);
 
 const IconWrapper = styled.span`
-  /* background-color: ${props => props.bgColor || "#fff"}; */
-  border-radius: ${props => props.borderRadius || 0};
   opacity: ${props => (props.onClick && !props.disabled ? 1 : 0.3)};
-  box-shadow: #dddddd 0 6px 6px -6px inset;
   cursor: ${props => (props.onClick && !props.disabled ? "pointer" : "")};
-  &:hover{
+  &:hover {
     opacity: 0.8;
   }
 `;
