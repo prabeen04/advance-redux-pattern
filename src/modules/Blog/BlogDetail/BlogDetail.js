@@ -11,6 +11,7 @@ import {
   ArrowForwardIosIcon
 } from "../../../components/Icons/Icons";
 import Card from "../../../components/UI/Layout/Card";
+import BlogMenu from "./BlogMenu";
 export default function BlogDetail(props) {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -61,7 +62,9 @@ export default function BlogDetail(props) {
         </div>
       </HeaderContainer>
       <Grid container>
-        <Grid item xs={12} sm={6} md={6} lg={3}></Grid>
+        <Grid item xs={12} sm={6} md={6} lg={3}>
+          <BlogMenu />
+        </Grid>
         <Grid item xs={12} sm={6} md={6} lg={6}>
           <Card>
             <BlogTitle>{data.title}</BlogTitle>
