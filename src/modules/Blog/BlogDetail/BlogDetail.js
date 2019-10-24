@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { Button, Breadcrumbs, Link, Typography } from "@material-ui/core";
+import { Button, Breadcrumbs, Link, Typography, Grid } from "@material-ui/core";
 import styled from "styled-components";
 import { selectBlogById, selectAllBlogs } from "../BlogSelector";
 import { getBlogById, getBlogs } from "../BlogAction";
@@ -60,12 +60,16 @@ export default function BlogDetail(props) {
           />
         </div>
       </HeaderContainer>
-      <Card>
-        <BlogTitle>
-          {data.id}.{data.title}
-        </BlogTitle>
-        <BlogDescription> {data.description}</BlogDescription>
-      </Card>
+      <Grid container>
+        <Grid item xs={12} sm={6} md={6} lg={3}></Grid>
+        <Grid item xs={12} sm={6} md={6} lg={6}>
+          <Card>
+            <BlogTitle>{data.title}</BlogTitle>
+            <BlogDescription> {data.description}</BlogDescription>
+          </Card>
+        </Grid>
+        <Grid item xs={12} sm={6} md={6} lg={3}></Grid>
+      </Grid>
     </div>
   );
 }
@@ -73,6 +77,7 @@ export default function BlogDetail(props) {
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.3rem;
   margin: 0.4rem;
   border-radius: 0.2rem;
