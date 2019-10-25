@@ -33,6 +33,7 @@ const LinkContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
 const LinkItem = styled(Link)`
   padding: 0.7rem 0.3rem;
   text-decoration: none;
