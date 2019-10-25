@@ -10,10 +10,11 @@ export default function BlogMenu() {
   const { data, isLoading } = useSelector(selectAllBlogs);
   const dispatch = useDispatch();
   const params = useParams();
-  debugger;
+
   useEffect(() => {
     dispatch(getBlogs());
   }, []);
+
   return (
     <Card>
       <LinkContainer>
@@ -27,16 +28,17 @@ export default function BlogMenu() {
     </Card>
   );
 }
+
 const LinkContainer = styled.div`
   display: flex;
   flex-direction: column;
 `;
 const LinkItem = styled(Link)`
-  padding: 0.5rem 0.3rem;
+  padding: 0.7rem 0.3rem;
   text-decoration: none;
-  background-color: ${props => (props.id == props.pId ? "#ddd" : "#f4f4f4")};
+  background-color: ${props => (props.id == props.pId ? "#e4e4e4" : "#f4f4f4")};
   border-radius: 0.2rem;
-  margin: 0.1rem;
+  margin: 0.08rem 0px;
   font-size: 1rem;
   color: #666;
   letter-spacing: 1;
