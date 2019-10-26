@@ -37,16 +37,19 @@ const LinkContainer = styled.div`
 const LinkItem = styled(Link)`
   padding: 0.7rem 0.3rem;
   text-decoration: none;
-  background-color: ${props => (props.id == props.pId ? "#e4e4e4" : "#f4f4f4")};
+  background-color: ${props =>
+    props.id == props.pId
+      ? props.theme.primaryColor
+      : props.theme.backgroundColor};
   border-radius: 0.2rem;
   margin: 0.08rem 0px;
   font-size: 1rem;
-  color: #666;
+  color: ${props =>
+    props.id == props.pId ? props.theme.titleColor : props.theme.subtitleColor};
   letter-spacing: 1;
   font-weight: 600;
   cursor: pointer;
   &:hover {
-    background-color: #ddd;
     color: #444;
   }
 `;
