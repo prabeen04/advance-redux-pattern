@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
-import Card from "../../../components/UI/Layout/Card";
 import { getBlogs } from "../BlogAction";
 import { selectAllBlogs } from "../BlogSelector";
 
@@ -16,22 +15,21 @@ export default function BlogMenu() {
   }, []);
 
   return (
-    <Card>
-      <LinkContainer>
-        {data &&
-          data.map(d => (
-            <LinkItem to={`/blog/${d.id}`} id={d.id} pId={params.id}>
-              {d.title}
-            </LinkItem>
-          ))}
-      </LinkContainer>
-    </Card>
+    <LinkContainer>
+      {data &&
+        data.map(d => (
+          <LinkItem to={`/blog/${d.id}`} id={d.id} pId={params.id}>
+            {d.title}
+          </LinkItem>
+        ))}
+    </LinkContainer>
   );
 }
 
 const LinkContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 0.3rem 0.5rem;
 `;
 
 const LinkItem = styled(Link)`
