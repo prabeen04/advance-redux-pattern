@@ -31,6 +31,11 @@ export default function Blog(props) {
 const BlogWrapper = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  /* mobile device */
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 `;
 
 const BlogItem = styled.div`
@@ -42,6 +47,10 @@ const BlogItem = styled.div`
   border-radius: 0.3rem;
   margin: 0.3rem;
   cursor: pointer;
+  @media (max-width: 600px) {
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
 `;
 
 const BlogTitle = styled.h1`
