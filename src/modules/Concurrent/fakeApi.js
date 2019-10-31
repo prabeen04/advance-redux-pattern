@@ -7,10 +7,6 @@ export function fetchProfileData() {
   };
 }
 
-// Suspense integrations like Relay implement
-// a contract like this to integrate with React.
-// Real implementations can be significantly more complex.
-// Don't copy-paste this into your project!
 function wrapPromise(promise) {
   let status = "pending";
   let result;
@@ -38,10 +34,8 @@ function wrapPromise(promise) {
 }
 
 function fetchUser() {
-  console.log("fetch user...");
   return new Promise(resolve => {
     setTimeout(() => {
-      console.log("fetched user");
       resolve({
         name: "Ringo Starr"
       });
@@ -50,10 +44,8 @@ function fetchUser() {
 }
 
 function fetchPosts() {
-  console.log("fetch posts...");
   return new Promise(resolve => {
     setTimeout(() => {
-      console.log("fetched posts");
       resolve([
         {
           id: 0,
