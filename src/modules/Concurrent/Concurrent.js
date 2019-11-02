@@ -6,7 +6,7 @@ export default function Concurrent() {
   return (
     <Suspense fallback={<h1>Loading profile...</h1>}>
       <ProfileDetails />
-      <Suspense fallback={<h1>Loading posts...</h1>}>
+      <Suspense fallback={<h3>Loading posts...</h3>}>
         <ProfileTimeline />
       </Suspense>
     </Suspense>

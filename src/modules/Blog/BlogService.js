@@ -11,11 +11,14 @@ const blogs = [
   { id: 4, title: "Title4", description: "Description 4" },
   { id: 5, title: "Title5", description: "Description 5" }
 ];
+const timeout = ms => new Promise(r => setTimeout(r, ms));
 const BlogService = {
   async getBlog() {
+    await timeout(2000);
     return BlogModel.fromAll(blogs);
   },
-  getBlogById(id) {
+  async getBlogById(id) {
+    await timeout(2000);
     const currentBlog = blogs.find(blog => blog.id == id);
     return BlogModel.from(currentBlog);
   }
