@@ -28,8 +28,8 @@ export default function BlogDetail(props) {
     dispatch(getBlogById(blogId));
   }, [blogId, id]);
 
-  if (!data) return null;
   if (isLoading) return <p>Loading...</p>;
+  if (!data) return null;
   return (
     <div>
       <HeaderContainer>
