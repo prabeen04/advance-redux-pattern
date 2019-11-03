@@ -13,7 +13,11 @@ export default function Blog(props) {
   useEffect(() => {
     dispatch(getBlogs());
   }, []);
-
+  function getBlogDesc(str, maxLn = 30) {
+    if (!str) return "N/A";
+    if (str.length <= maxLn) return str;
+    return `${str.slice(0, maxLn)}...`;
+  }
   if (isLoading) return <p>Loading...</p>;
   return (
     <BlogWrapper>
@@ -21,7 +25,7 @@ export default function Blog(props) {
         data.map((blog, i) => (
           <BlogItem onClick={() => history.push(`/blog/${blog.id}`)}>
             <BlogTitle>{blog.title}</BlogTitle>
-            <Description>{blog.description}</Description>
+            <Description>{getBlogDesc(blog.description, 50)}</Description>
           </BlogItem>
         ))}
     </BlogWrapper>
