@@ -88,11 +88,14 @@ const HeaderContainer = styled.div`
   box-shadow: 0 1px 4px 1px ${props => props.theme.boxShadowColor};
 `;
 const BlogTitle = styled.h1`
-  margin: 0 auto;
+  margin: 10px auto;
   font-size: 20px;
+  font-weight: 400;
   color: ${props => props.theme.titleColor};
 `;
 const BlogDescription = styled.p`
   font-size: 16px;
+  line-height: 1.6;
+  font-weight: 400;
   color: ${props => props.theme.subtitleColor};
 `;
