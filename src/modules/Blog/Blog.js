@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { selectAllBlogs } from "./BlogSelector";
 import { getBlogs } from "./BlogAction";
+import { elipsize } from "../../utils/commonFns";
 
 export default function Blog(props) {
   const { data, isLoading } = useSelector(selectAllBlogs);
@@ -21,7 +22,7 @@ export default function Blog(props) {
         data.map((blog, i) => (
           <BlogItem onClick={() => history.push(`/blog/${blog.id}`)}>
             <BlogTitle>{blog.title}</BlogTitle>
-            <Description>{blog.description}</Description>
+            <Description>{elipsize(blog.description, 50)}</Description>
           </BlogItem>
         ))}
     </BlogWrapper>
