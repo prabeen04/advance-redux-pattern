@@ -64,7 +64,7 @@ const BlogService = {
     return BlogModel.fromAll(blogs);
   },
   async getBlogById(id) {
-    await timeout(500);
+    await timeout(1000);
     const currentBlog = blogs.find(blog => blog.id == id);
     return BlogModel.from(currentBlog);
   }
