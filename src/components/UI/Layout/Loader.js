@@ -12,18 +12,23 @@ export default function Loader(props) {
         minHeight: 100
       }}
     >
-      <Load>
-        <div className="lds-ellipsis">
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </Load>
+      {props.loaderType === "ellipsis" ? <ElipsisLoader /> : "Loading.."}
     </Card>
   );
 }
-const Load = styled.div`
+function ElipsisLoader() {
+  return (
+    <Elipsize>
+      <div className="lds-ellipsis">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </Elipsize>
+  );
+}
+const Elipsize = styled.div`
   .lds-ellipsis {
     display: inline-block;
     position: relative;

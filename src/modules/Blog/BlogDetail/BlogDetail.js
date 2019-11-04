@@ -67,7 +67,7 @@ export default function BlogDetail(props) {
         </Grid>
         <Grid item xs={12} sm={6} md={6} lg={6}>
           {isLoading ? (
-            <Loader />
+            <Loader loaderType="ellipsis" />
           ) : (
             <Card>
               <BlogTitle>{data.title}</BlogTitle>
