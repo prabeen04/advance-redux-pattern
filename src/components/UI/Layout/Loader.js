@@ -12,29 +12,31 @@ export default function Loader(props) {
         minHeight: 100
       }}
     >
-      <Load className="lds-ellipsis">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <Load>
+        <div className="lds-ellipsis">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </Load>
     </Card>
   );
 }
 const Load = styled.div`
-  display: inline-block;
-  position: relative;
-  width: 64px;
-  height: 64px;
-  background: red;
-  color: green;
+  .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
   .lds-ellipsis div {
     position: absolute;
     top: 27px;
     width: 11px;
     height: 11px;
     border-radius: 50%;
-    background: #fff;
+    background: ${props => props.theme.subtitleColor};
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
   }
   .lds-ellipsis div:nth-child(1) {
