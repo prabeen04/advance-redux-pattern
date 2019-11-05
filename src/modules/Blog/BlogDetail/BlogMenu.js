@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { getBlogs } from "../BlogAction";
 import { selectAllBlogs } from "../BlogSelector";
+import { LabelImportantIcon } from "../../../components/Icons/Icons";
 
 export default function BlogMenu() {
   const { data, isLoading } = useSelector(selectAllBlogs);
@@ -19,6 +20,8 @@ export default function BlogMenu() {
       {data &&
         data.map(d => (
           <LinkItem to={`/blog/${d.id}`} id={d.id} pId={params.id}>
+            <LabelImportantIcon />
+            &nbsp;&nbsp;
             {d.title}
           </LinkItem>
         ))}
@@ -33,6 +36,8 @@ const LinkContainer = styled.div`
 `;
 
 const LinkItem = styled(Link)`
+  display: flex;
+  align-items: center;
   padding: 0.7rem 0.3rem;
   text-decoration: none;
   background-color: ${props =>
