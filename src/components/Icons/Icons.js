@@ -3,7 +3,8 @@ import styled from "styled-components";
 import {
   ArrowBackIos,
   ArrowForwardIos,
-  KeyboardReturn
+  KeyboardReturn,
+  LabelImportant
 } from "@material-ui/icons";
 
 function DefaultIcon(props) {
@@ -28,6 +29,7 @@ function generateIcon(IconComponent) {
 export const ArrowBackIosIcon = generateIcon(ArrowBackIos);
 export const ArrowForwardIosIcon = generateIcon(ArrowForwardIos);
 export const KeyboardReturnIcon = generateIcon(KeyboardReturn);
+export const LabelImportantIcon = generateIcon(LabelImportant);
 
 const IconWrapper = styled.span`
   opacity: ${props => (props.onClick && !props.disabled ? 1 : 0.3)};
