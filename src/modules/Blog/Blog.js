@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { selectAllBlogs } from "./BlogSelector";
 import { getBlogs } from "./BlogAction";
 import { elipsize } from "../../utils/commonFns";
+import Loader from "../../components/UI/Layout/Loader";
 
 export default function Blog(props) {
   const { data, isLoading } = useSelector(selectAllBlogs);
@@ -15,7 +16,7 @@ export default function Blog(props) {
     dispatch(getBlogs());
   }, []);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Loader loaderType="ellipsis" />;
   return (
     <BlogWrapper>
       {data &&
@@ -45,18 +46,21 @@ const BlogItem = styled.div`
   width: 200px;
   background-color: ${props => props.theme.backgroundColor};
   padding: 0.5rem;
-  border-radius: 0.3rem;
+  /* border-radius: 0.3rem; */
   margin: 0.3rem;
   cursor: pointer;
   @media (max-width: 600px) {
     margin: 0 auto;
     margin-bottom: 10px;
+    width: 90%;
+    :first-child {
+      margin-top: 10px;
+    }
   }
 `;
 
 const BlogTitle = styled.h1`
   display: flex;
-  /* justify-content:center; */
   color: ${props => props.theme.titleColor};
   font-size: 1.2rem;
   letter-spacing: 2px;

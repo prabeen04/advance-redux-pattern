@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import {  Breadcrumbs, Link, Typography, Grid } from "@material-ui/core";
+import { Breadcrumbs, Link, Typography, Grid } from "@material-ui/core";
 import styled from "styled-components";
 import { selectBlogById, selectAllBlogs } from "../BlogSelector";
 import { getBlogById, getBlogs } from "../BlogAction";
@@ -29,7 +29,7 @@ export default function BlogDetail(props) {
     dispatch(getBlogById(blogId));
   }, [blogId, id]);
 
-  if (!data) return null;
+  if (!data) return <Loader loaderType="ellipsis" />;
   return (
     <div>
       <HeaderContainer>
@@ -62,10 +62,10 @@ export default function BlogDetail(props) {
         </div>
       </HeaderContainer>
       <Grid container>
-        <Grid item xs={12} sm={6} md={6} lg={3}>
+        <Grid item xs={12} sm={12} md={6} lg={3}>
           <BlogMenu />
         </Grid>
-        <Grid item xs={12} sm={6} md={6} lg={6}>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           {isLoading ? (
             <Loader loaderType="ellipsis" />
           ) : (
@@ -75,7 +75,7 @@ export default function BlogDetail(props) {
             </Card>
           )}
         </Grid>
-        <Grid item xs={12} sm={6} md={6} lg={3}></Grid>
+        <Grid item xs={12} sm={12} md={6} lg={3}></Grid>
       </Grid>
     </div>
   );
@@ -87,7 +87,7 @@ const HeaderContainer = styled.div`
   align-items: center;
   padding: 0.3rem;
   margin: 0.4rem;
-  border-radius: 0.2rem;
+  /* border-radius: 0.2rem; */
   background-color: ${props => props.theme.backgroundColor};
   box-shadow: 0 1px 4px 1px ${props => props.theme.boxShadowColor};
 `;
