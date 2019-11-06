@@ -87,7 +87,7 @@ const HeaderContainer = styled.div`
   align-items: center;
   padding: 0.3rem;
   margin: 0.4rem;
-  border-radius: 0.2rem;
+  /* border-radius: 0.2rem; */
   background-color: ${props => props.theme.backgroundColor};
   box-shadow: 0 1px 4px 1px ${props => props.theme.boxShadowColor};
 `;

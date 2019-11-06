@@ -46,7 +46,7 @@ const BlogItem = styled.div`
   width: 200px;
   background-color: ${props => props.theme.backgroundColor};
   padding: 0.5rem;
-  border-radius: 0.3rem;
+  /* border-radius: 0.3rem; */
   margin: 0.3rem;
   cursor: pointer;
   @media (max-width: 600px) {
