@@ -62,10 +62,10 @@ export default function BlogDetail(props) {
         </div>
       </HeaderContainer>
       <Grid container>
-        <Grid item xs={12} sm={6} md={6} lg={3}>
+        <Grid item xs={12} sm={12} md={6} lg={3}>
           <BlogMenu />
         </Grid>
-        <Grid item xs={12} sm={6} md={6} lg={6}>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           {isLoading ? (
             <Loader loaderType="ellipsis" />
           ) : (
@@ -75,7 +75,7 @@ export default function BlogDetail(props) {
             </Card>
           )}
         </Grid>
-        <Grid item xs={12} sm={6} md={6} lg={3}></Grid>
+        <Grid item xs={12} sm={12} md={6} lg={3}></Grid>
       </Grid>
     </div>
   );
