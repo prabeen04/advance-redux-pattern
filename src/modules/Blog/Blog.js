@@ -61,7 +61,6 @@ const BlogItem = styled.div`
 
 const BlogTitle = styled.h1`
   display: flex;
-  /* justify-content:center; */
   color: ${props => props.theme.titleColor};
   font-size: 1.2rem;
   letter-spacing: 2px;

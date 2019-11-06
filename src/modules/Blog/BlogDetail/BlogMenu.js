@@ -33,6 +33,11 @@ const LinkContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin: 0.3rem 0.5rem;
+  @media (max-width: 600px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* justify-content: space-evenly; */
+  }
 `;
 
 const LinkItem = styled(Link)`
@@ -54,5 +59,11 @@ const LinkItem = styled(Link)`
   cursor: pointer;
   &:hover {
     color: #444;
+  }
+  @media (max-width: 600px) {
+    padding: 0.3rem;
+    font-size: 0.7rem;
+    margin: 0.1rem;
+    flex-basis: 10%;
   }
 `;
