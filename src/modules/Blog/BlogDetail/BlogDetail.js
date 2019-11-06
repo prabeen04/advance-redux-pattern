@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import {  Breadcrumbs, Link, Typography, Grid } from "@material-ui/core";
+import { Breadcrumbs, Link, Typography, Grid } from "@material-ui/core";
 import styled from "styled-components";
 import { selectBlogById, selectAllBlogs } from "../BlogSelector";
 import { getBlogById, getBlogs } from "../BlogAction";
@@ -29,7 +29,7 @@ export default function BlogDetail(props) {
     dispatch(getBlogById(blogId));
   }, [blogId, id]);
 
-  if (!data) return null;
+  if (!data) return <Loader loaderType="ellipsis" />;
   return (
     <div>
       <HeaderContainer>

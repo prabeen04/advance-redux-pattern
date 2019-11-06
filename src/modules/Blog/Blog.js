@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { selectAllBlogs } from "./BlogSelector";
 import { getBlogs } from "./BlogAction";
 import { elipsize } from "../../utils/commonFns";
+import Loader from "../../components/UI/Layout/Loader";
 
 export default function Blog(props) {
   const { data, isLoading } = useSelector(selectAllBlogs);
@@ -15,7 +16,7 @@ export default function Blog(props) {
     dispatch(getBlogs());
   }, []);
 
-  if (isLoading) return <p>Loading...</p>;
+  if (isLoading) return <Loader loaderType="ellipsis" />;
   return (
     <BlogWrapper>
       {data &&
