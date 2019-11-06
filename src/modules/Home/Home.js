@@ -28,7 +28,7 @@ const JSWrapper = styled.div`
   /* mobile device */
   @media (max-width: 600px) {
     flex-direction: column;
-    top: 50px;
+    top: 100px;
     & > * {
       width: 100%;
       margin: 0.5rem;
