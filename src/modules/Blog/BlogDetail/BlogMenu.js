@@ -49,7 +49,6 @@ const LinkItem = styled(Link)`
     props.id == props.pId
       ? props.theme.primaryColor
       : props.theme.backgroundColor};
-  /* border-radius: 0.2rem; */
   margin: 0.08rem 0px;
   font-size: 1rem;
   color: ${props =>
