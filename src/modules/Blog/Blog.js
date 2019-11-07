@@ -48,6 +48,9 @@ const BlogItem = styled.div`
   padding: 0.5rem;
   margin: 0.3rem;
   cursor: pointer;
+  &:hover {
+    box-shadow: 0 1px 4px 1px ${props => props.theme.boxShadowColor};
+  }
   @media (max-width: 600px) {
     margin: 0 auto;
     margin-bottom: 10px;
