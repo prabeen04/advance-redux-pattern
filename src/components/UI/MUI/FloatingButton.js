@@ -27,7 +27,7 @@ export default function FloatingButton() {
   const classes = useStyles();
   return (
     <div className={classes.fabBtnContainer}>
-      <Fab color="primary" aria-label="add" className={classes.fab}>
+      <Fab color="secondary" aria-label="add" className={classes.fab}>
         <AddIcon />
       </Fab>
     </div>
