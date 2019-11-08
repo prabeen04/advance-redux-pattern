@@ -6,6 +6,7 @@ import { selectAllBlogs } from "./BlogSelector";
 import { getBlogs } from "./BlogAction";
 import { elipsize } from "../../utils/commonFns";
 import Loader from "../../components/UI/Layout/Loader";
+import FloatingButton from "../../components/UI/MUI/FloatingButton";
 
 export default function Blog(props) {
   const { data, isLoading } = useSelector(selectAllBlogs);
@@ -18,15 +19,18 @@ export default function Blog(props) {
 
   if (isLoading) return <Loader loaderType="ellipsis" />;
   return (
-    <BlogWrapper>
-      {data &&
-        data.map((blog, i) => (
-          <BlogItem onClick={() => history.push(`/blog/${blog.id}`)}>
-            <BlogTitle>{blog.title}</BlogTitle>
-            <Description>{elipsize(blog.description, 50)}</Description>
-          </BlogItem>
-        ))}
-    </BlogWrapper>
+    <>
+      <BlogWrapper>
+        {data &&
+          data.map((blog, i) => (
+            <BlogItem onClick={() => history.push(`/blog/${blog.id}`)}>
+              <BlogTitle>{blog.title}</BlogTitle>
+              <Description>{elipsize(blog.description, 50)}</Description>
+            </BlogItem>
+          ))}
+      </BlogWrapper>
+      <FloatingButton />
+    </>
   );
 }
 
