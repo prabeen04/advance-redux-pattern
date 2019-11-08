@@ -7,6 +7,7 @@ import { getBlogs } from "./BlogAction";
 import { elipsize } from "../../utils/commonFns";
 import Loader from "../../components/UI/Layout/Loader";
 import FloatingButton from "../../components/UI/MUI/FloatingButton";
+import BlogModal from "./BlogModal/BlogModal";
 
 export default function Blog(props) {
   const { data, isLoading } = useSelector(selectAllBlogs);
@@ -30,6 +31,7 @@ export default function Blog(props) {
           ))}
       </BlogWrapper>
       <FloatingButton />
+      <BlogModal />
     </>
   );
 }
