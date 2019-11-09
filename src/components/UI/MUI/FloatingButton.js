@@ -23,11 +23,17 @@ const useStyles = makeStyles(theme => ({
     }
   }
 }));
-export default function FloatingButton() {
+export default function FloatingButton(props) {
   const classes = useStyles();
+  const { onClick } = props;
   return (
     <div className={classes.fabBtnContainer}>
-      <Fab color="secondary" aria-label="add" className={classes.fab}>
+      <Fab
+        color="secondary"
+        aria-label="add"
+        className={classes.fab}
+        onClick={onClick}
+      >
         <AddIcon />
       </Fab>
     </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
@@ -11,6 +11,7 @@ import BlogModal from "./BlogModal/BlogModal";
 
 export default function Blog(props) {
   const { data, isLoading } = useSelector(selectAllBlogs);
+  const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -30,8 +31,8 @@ export default function Blog(props) {
             </BlogItem>
           ))}
       </BlogWrapper>
-      <FloatingButton />
-      <BlogModal />
+      <FloatingButton onClick={() => setModalOpen(true)} />
+      <BlogModal open={modalOpen} toggle={setModalOpen} />
     </>
   );
 }
