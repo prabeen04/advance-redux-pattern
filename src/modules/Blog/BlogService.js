@@ -67,6 +67,10 @@ const BlogService = {
     await timeout(1000);
     const currentBlog = blogs.find(blog => blog.id == id);
     return BlogModel.from(currentBlog);
+  },
+  async createBlog(data) {
+    await timeout(1000);
+    return BlogModel.fromAll([...blogs, data]);
   }
 };
 export default BlogService;
