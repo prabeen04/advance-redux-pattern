@@ -1,5 +1,5 @@
 import { createAction } from "../../store/utils/createAction";
-import { GET_BLOGS, GET_BLOG_BY_ID } from "./BlogActionTypes";
+import { GET_BLOGS, GET_BLOG_BY_ID, CREATE_BLOG } from "./BlogActionTypes";
 import BlogService from "./BlogService";
 
 export const getBlogs = () => {
@@ -7,4 +7,7 @@ export const getBlogs = () => {
 };
 export const getBlogById = id => {
   return createAction(GET_BLOG_BY_ID, () => BlogService.getBlogById(id));
+};
+export const createBlog = data => {
+  return createAction(CREATE_BLOG, () => BlogService.createBlog(data));
 };
