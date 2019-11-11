@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import StyledModal from "../../../components/UI/MUI/StyledModal";
 import { Button } from "@material-ui/core";
-import { createBlog } from "../BlogAction";
+import { createBlog, getBlogs } from "../BlogAction";
 
 const data = {
   id: 6,
-  title: "Title1",
+  title: "Title6",
   description: `Lorem Ipsum is simply dummy text of the printing and typesetting industry.
      Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an 
      unknown printer took a galley of type and scrambled it to make a type specimen book. 
@@ -19,10 +19,15 @@ const data = {
 export default function BlogModal(props) {
   const { open, toggle } = props;
   const dispatch = useDispatch();
+  async function addBlog(data) {
+    await dispatch(createBlog(data));
+    toggle();
+    dispatch(getBlogs());
+  }
   return (
     <>
       <StyledModal open={open} handleClose={() => toggle(false)}>
-        <Button onClick={() => dispatch(createBlog(data))}>ADD BLOG</Button>
+        <Button onClick={() => addBlog(data)}>ADD BLOG</Button>
       </StyledModal>
     </>
   );
