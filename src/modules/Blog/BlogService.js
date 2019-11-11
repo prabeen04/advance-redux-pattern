@@ -70,7 +70,8 @@ const BlogService = {
   },
   async createBlog(data) {
     await timeout(1000);
-    return BlogModel.fromAll([...blogs, data]);
+    blogs.push(data);
+    return true;
   }
 };
 export default BlogService;

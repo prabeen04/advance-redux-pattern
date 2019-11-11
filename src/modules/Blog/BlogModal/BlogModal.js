@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import StyledModal from "../../../components/UI/MUI/StyledModal";
 import { Button } from "@material-ui/core";
-import { createBlog } from "../BlogAction";
+import { createBlog, getBlogs } from "../BlogAction";
 
 const data = {
   id: 6,
@@ -19,10 +19,14 @@ const data = {
 export default function BlogModal(props) {
   const { open, toggle } = props;
   const dispatch = useDispatch();
+  async function addBlog(data) {
+    await dispatch(createBlog(data));
+    dispatch(getBlogs());
+  }
   return (
     <>
       <StyledModal open={open} handleClose={() => toggle(false)}>
-        <Button onClick={() => dispatch(createBlog(data))}>ADD BLOG</Button>
+        <Button onClick={() => addBlog(data)}>ADD BLOG</Button>
       </StyledModal>
     </>
   );
