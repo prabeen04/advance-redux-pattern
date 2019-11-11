@@ -8,6 +8,7 @@ import MuiDialogActions from "@material-ui/core/DialogActions";
 import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
+import styled from "styled-components";
 
 const styles = theme => ({
   root: {
@@ -56,7 +57,7 @@ const DialogActions = withStyles(theme => ({
 export default function StyledModal(props) {
   return (
     <>
-      <Dialog
+      <StyledDialog
         onClose={props.handleClose}
         aria-labelledby="customized-dialog-title"
         open={props.open}
@@ -64,13 +65,23 @@ export default function StyledModal(props) {
         <DialogTitle id="customized-dialog-title" onClose={props.handleClose}>
           Modal title
         </DialogTitle>
-        <DialogContent dividers>{props.children}</DialogContent>
+        <StyledModalContent divider style={{ minWidth: 500 }}>
+          {props.children}
+        </StyledModalContent>
         <DialogActions>
           <Button autoFocus onClick={props.handleClose} color="primary">
             Close
           </Button>
         </DialogActions>
-      </Dialog>
+      </StyledDialog>
     </>
   );
 }
+
+const StyledModalContent = styled(DialogContent)`
+  background-color: ${props => props.theme.backgroundColor};
+`;
+
+const StyledDialog = styled(Dialog)`
+  background-color: ${props => props.theme.applicationBackground};
+`;
