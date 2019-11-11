@@ -57,7 +57,7 @@ const DialogActions = withStyles(theme => ({
 export default function StyledModal(props) {
   return (
     <>
-      <Dialog
+      <StyledDialog
         onClose={props.handleClose}
         aria-labelledby="customized-dialog-title"
         open={props.open}
@@ -76,7 +76,7 @@ export default function StyledModal(props) {
             Close
           </Button>
         </StyledDialogActions>
-      </Dialog>
+      </StyledDialog>
     </>
   );
 }
@@ -90,4 +90,10 @@ const StyledDialogTitle = styled(DialogTitle)`
 `;
 const StyledDialogActions = styled(DialogActions)`
   background-color: ${props => props.theme.backgroundColor};
+`;
+
+const StyledDialog = styled(Dialog)`
+  & .MuiDialog-paper {
+    background-color: ${props => props.theme.applicationBackground};
+  }
 `;
