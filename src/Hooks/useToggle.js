@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from "react";
 
 export function useToggle() {
-  const [editMode, setEditMode] = useState(false)
+  const [editMode, setEditMode] = useState(false);
   function toggle() {
-    setEditMode(!editMode)
+    setEditMode(!editMode);
   }
 
-  return { editMode, toggle }
+  return { editMode, toggle };
 }
