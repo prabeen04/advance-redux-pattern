@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import StyledModal from "../../../components/UI/MUI/StyledModal";
 import { Button } from "@material-ui/core";
 import { createBlog, getBlogs } from "../BlogAction";
+import InputComponent from "../../../components/Forms/InputComponent";
 
 const data = {
   id: 6,
@@ -18,6 +19,8 @@ const data = {
 
 export default function BlogModal(props) {
   const { open, toggle } = props;
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const dispatch = useDispatch();
   async function addBlog(data) {
     await dispatch(createBlog(data));
@@ -27,7 +30,29 @@ export default function BlogModal(props) {
   return (
     <>
       <StyledModal open={open} handleClose={() => toggle(false)}>
-        <Button onClick={() => addBlog(data)}>ADD BLOG</Button>
+        <div>
+          <InputComponent
+            label="Title"
+            value={title}
+            multiline
+            onChange={e => setTitle(e.target.value)}
+            style={{ width: "100%" }}
+          />
+        </div>
+        <div>
+          <InputComponent
+            label="Description"
+            value={description}
+            multiline
+            rows={4}
+            onChange={e => setDescription(e.target.value)}
+            style={{ width: "100%" }}
+          />
+        </div>
+        <br />
+        <Button style={{ float: "right" }} onClick={() => addBlog(data)}>
+          ADD BLOG
+        </Button>
       </StyledModal>
     </>
   );
