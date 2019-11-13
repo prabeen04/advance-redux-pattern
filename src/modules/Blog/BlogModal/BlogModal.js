@@ -22,8 +22,13 @@ export default function BlogModal(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const dispatch = useDispatch();
-  async function addBlog(data) {
-    await dispatch(createBlog(data));
+  async function addBlog() {
+    await dispatch(
+      createBlog({
+        title,
+        description
+      })
+    );
     toggle();
     dispatch(getBlogs());
   }
@@ -50,7 +55,7 @@ export default function BlogModal(props) {
           />
         </div>
         <br />
-        <Button style={{ float: "right" }} onClick={() => addBlog(data)}>
+        <Button style={{ float: "right" }} onClick={addBlog}>
           ADD BLOG
         </Button>
       </StyledModal>
