@@ -70,7 +70,7 @@ const BlogService = {
   },
   async createBlog(data) {
     await timeout(1000);
-    blogs.push(data);
+    blogs.push({ id: blogs.length + 1, ...data });
     return true;
   }
 };
