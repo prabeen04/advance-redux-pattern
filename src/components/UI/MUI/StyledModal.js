@@ -75,6 +75,15 @@ export default function StyledModal(props) {
           <Button autoFocus onClick={props.handleClose} color="primary">
             Close
           </Button>
+          {props.onSubmit && (
+            <Button
+              variant="contained"
+              onClick={props.onSubmit}
+              color="primary"
+            >
+              submit
+            </Button>
+          )}
         </StyledDialogActions>
       </StyledDialog>
     </>
