@@ -80,6 +80,7 @@ export default function StyledModal(props) {
               variant="contained"
               onClick={props.onSubmit}
               color="primary"
+              disabled={props.disabled}
             >
               submit
             </Button>
