@@ -34,7 +34,12 @@ export default function BlogModal(props) {
   }
   return (
     <>
-      <StyledModal open={open} handleClose={() => toggle(false)}>
+      <StyledModal
+        open={open}
+        handleClose={() => toggle(false)}
+        onSubmit={addBlog}
+        disabled={!title || !description}
+      >
         <div>
           <InputComponent
             label="Title"
@@ -55,9 +60,6 @@ export default function BlogModal(props) {
           />
         </div>
         <br />
-        <Button style={{ float: "right" }} onClick={addBlog}>
-          ADD BLOG
-        </Button>
       </StyledModal>
     </>
   );
