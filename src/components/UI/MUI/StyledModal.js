@@ -93,17 +93,21 @@ export default function StyledModal(props) {
 
 const StyledModalContent = styled(DialogContent)`
   background-color: ${props => props.theme.backgroundColor};
+  color: ${props => props.theme.color};
 `;
 
 const StyledDialogTitle = styled(DialogTitle)`
   background-color: ${props => props.theme.backgroundColor};
+  color: ${props => props.theme.color};
 `;
 const StyledDialogActions = styled(DialogActions)`
   background-color: ${props => props.theme.backgroundColor};
+  color: ${props => props.theme.color};
 `;
 
 const StyledDialog = styled(Dialog)`
   & .MuiDialog-paper {
     background-color: ${props => props.theme.applicationBackground};
+    color: ${props => props.theme.color};
   }
 `;
