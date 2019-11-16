@@ -8,16 +8,19 @@ import { getBlogById, getBlogs } from "../BlogAction";
 import {
   KeyboardReturnIcon,
   ArrowBackIosIcon,
-  ArrowForwardIosIcon
+  ArrowForwardIosIcon,
+  EditIcon
 } from "../../../components/Icons/Icons";
 import Card from "../../../components/UI/Layout/Card";
 import BlogMenu from "./BlogMenu";
 import Loader from "../../../components/UI/Layout/Loader";
+import BlogModal from "../BlogModal/BlogModal";
 export default function BlogDetail(props) {
   const { id } = useParams();
   const dispatch = useDispatch();
   const [blogId, setBlogId] = useState(null);
   const { data, isLoading } = useSelector(selectBlogById);
+  const [modalOpen, setModalOpen] = useState(false);
   const blogList = useSelector(selectAllBlogs).data;
 
   useEffect(() => {
@@ -29,6 +32,9 @@ export default function BlogDetail(props) {
     dispatch(getBlogById(blogId));
   }, [blogId, id]);
 
+  function handleUpdate(blog) {
+    alert(JSON.stringify(blog));
+  }
   if (!data) return <Loader loaderType="ellipsis" />;
   return (
     <div>
@@ -70,13 +76,23 @@ export default function BlogDetail(props) {
             <Loader loaderType="ellipsis" />
           ) : (
             <Card>
-              <BlogTitle>{data.title}</BlogTitle>
+              <TitleHeader>
+                <BlogTitle>{data.title}</BlogTitle>
+                <EditIcon onClick={() => setModalOpen(true)} />
+              </TitleHeader>
               <BlogDescription> {data.description}</BlogDescription>
             </Card>
           )}
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={3}></Grid>
       </Grid>
+      <BlogModal
+        open={modalOpen}
+        toggle={setModalOpen}
+        blog={data}
+        isEditing
+        onUpdate={handleUpdate}
+      />
     </div>
   );
 }
@@ -90,8 +106,12 @@ const HeaderContainer = styled.div`
   background-color: ${props => props.theme.backgroundColor};
   box-shadow: 0 1px 4px 1px ${props => props.theme.boxShadowColor};
 `;
+const TitleHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+`;
 const BlogTitle = styled.h1`
-  margin: 10px auto;
   font-size: 20px;
   font-weight: 400;
   color: ${props => props.theme.titleColor};
