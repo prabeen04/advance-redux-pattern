@@ -14,11 +14,13 @@ import {
 import Card from "../../../components/UI/Layout/Card";
 import BlogMenu from "./BlogMenu";
 import Loader from "../../../components/UI/Layout/Loader";
+import BlogModal from "../BlogModal/BlogModal";
 export default function BlogDetail(props) {
   const { id } = useParams();
   const dispatch = useDispatch();
   const [blogId, setBlogId] = useState(null);
   const { data, isLoading } = useSelector(selectBlogById);
+  const [modalOpen, setModalOpen] = useState(false);
   const blogList = useSelector(selectAllBlogs).data;
 
   useEffect(() => {
@@ -81,6 +83,7 @@ export default function BlogDetail(props) {
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={3}></Grid>
       </Grid>
+      <BlogModal open={modalOpen} toggle={setModalOpen} />
     </div>
   );
 }
