@@ -8,7 +8,8 @@ import { getBlogById, getBlogs } from "../BlogAction";
 import {
   KeyboardReturnIcon,
   ArrowBackIosIcon,
-  ArrowForwardIosIcon
+  ArrowForwardIosIcon,
+  EditIcon
 } from "../../../components/Icons/Icons";
 import Card from "../../../components/UI/Layout/Card";
 import BlogMenu from "./BlogMenu";
@@ -70,7 +71,10 @@ export default function BlogDetail(props) {
             <Loader loaderType="ellipsis" />
           ) : (
             <Card>
-              <BlogTitle>{data.title}</BlogTitle>
+              <TitleHeader>
+                <BlogTitle>{data.title}</BlogTitle>
+                <EditIcon onClick={() => alert("Edit clicked")} />
+              </TitleHeader>
               <BlogDescription> {data.description}</BlogDescription>
             </Card>
           )}
@@ -90,8 +94,12 @@ const HeaderContainer = styled.div`
   background-color: ${props => props.theme.backgroundColor};
   box-shadow: 0 1px 4px 1px ${props => props.theme.boxShadowColor};
 `;
+const TitleHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+`;
 const BlogTitle = styled.h1`
-  margin: 10px auto;
   font-size: 20px;
   font-weight: 400;
   color: ${props => props.theme.titleColor};
