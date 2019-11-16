@@ -32,6 +32,9 @@ export default function BlogDetail(props) {
     dispatch(getBlogById(blogId));
   }, [blogId, id]);
 
+  function handleUpdate(blog) {
+    alert(JSON.stringify(blog));
+  }
   if (!data) return <Loader loaderType="ellipsis" />;
   return (
     <div>
@@ -83,7 +86,13 @@ export default function BlogDetail(props) {
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={3}></Grid>
       </Grid>
-      <BlogModal open={modalOpen} toggle={setModalOpen} blog={data} />
+      <BlogModal
+        open={modalOpen}
+        toggle={setModalOpen}
+        blog={data}
+        isEditing
+        onUpdate={handleUpdate}
+      />
     </div>
   );
 }

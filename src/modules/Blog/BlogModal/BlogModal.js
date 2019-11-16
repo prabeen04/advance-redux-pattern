@@ -5,7 +5,7 @@ import { createBlog, getBlogs } from "../BlogAction";
 import InputComponent from "../../../components/Forms/InputComponent";
 
 export default function BlogModal(props) {
-  const { open, toggle, blog } = props;
+  const { open, toggle, blog, isEditing, onUpdate } = props;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ export default function BlogModal(props) {
       <StyledModal
         open={open}
         handleClose={() => toggle(false)}
-        onSubmit={addBlog}
+        onSubmit={isEditing ? () => onUpdate({ title, description }) : addBlog}
         disabled={!title || !description}
       >
         <div>
