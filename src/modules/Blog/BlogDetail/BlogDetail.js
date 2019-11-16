@@ -75,7 +75,7 @@ export default function BlogDetail(props) {
             <Card>
               <TitleHeader>
                 <BlogTitle>{data.title}</BlogTitle>
-                <EditIcon onClick={() => alert("Edit clicked")} />
+                <EditIcon onClick={() => setModalOpen(true)} />
               </TitleHeader>
               <BlogDescription> {data.description}</BlogDescription>
             </Card>
@@ -83,7 +83,7 @@ export default function BlogDetail(props) {
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={3}></Grid>
       </Grid>
-      <BlogModal open={modalOpen} toggle={setModalOpen} />
+      <BlogModal open={modalOpen} toggle={setModalOpen} blog={data} />
     </div>
   );
 }

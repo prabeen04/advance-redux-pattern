@@ -11,6 +11,7 @@ export default function BlogModal(props) {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    if (!blog) return;
     setTitle(blog.title);
     setDescription(blog.description);
   }, [blog]);
