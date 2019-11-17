@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { Breadcrumbs, Link, Typography, Grid } from "@material-ui/core";
 import styled from "styled-components";
 import { selectBlogById, selectAllBlogs } from "../BlogSelector";
-import { getBlogById, getBlogs } from "../BlogAction";
+import { getBlogById, getBlogs, updateBlog } from "../BlogAction";
 import {
   KeyboardReturnIcon,
   ArrowBackIosIcon,
@@ -15,6 +15,7 @@ import Card from "../../../components/UI/Layout/Card";
 import BlogMenu from "./BlogMenu";
 import Loader from "../../../components/UI/Layout/Loader";
 import BlogModal from "../BlogModal/BlogModal";
+
 export default function BlogDetail(props) {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -32,9 +33,11 @@ export default function BlogDetail(props) {
     dispatch(getBlogById(blogId));
   }, [blogId, id]);
 
-  function handleUpdate(blog) {
-    alert(JSON.stringify(blog));
+  async function handleUpdate(blog) {
+    await dispatch(updateBlog(blog.id, blog));
+    setModalOpen(false);
   }
+
   if (!data) return <Loader loaderType="ellipsis" />;
   return (
     <div>
