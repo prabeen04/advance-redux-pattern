@@ -31,7 +31,9 @@ export default function BlogModal(props) {
       <StyledModal
         open={open}
         handleClose={() => toggle(false)}
-        onSubmit={isEditing ? () => onUpdate({ title, description }) : addBlog}
+        onSubmit={
+          isEditing ? () => onUpdate(blog.id, { title, description }) : addBlog
+        }
         disabled={!title || !description}
       >
         <div>

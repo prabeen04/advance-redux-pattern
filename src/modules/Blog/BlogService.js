@@ -72,6 +72,16 @@ const BlogService = {
     await timeout(1000);
     blogs.push({ id: blogs.length + 1, ...data });
     return true;
+  },
+  async updateBlog(id, data) {
+    await timeout(500);
+    const finalBlog = blogs.map(blog => {
+      if (blog.id === id) {
+        return data;
+      }
+      return blog;
+    });
+    return BlogModel.fromAll(finalBlog);
   }
 };
 export default BlogService;
