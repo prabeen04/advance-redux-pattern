@@ -73,7 +73,7 @@ const BlogService = {
     blogs.push({ id: blogs.length + 1, ...data });
     return true;
   },
-  async editBlog(id, data) {
+  async updateBlog(id, data) {
     await timeout(500);
     const finalBlog = blogs.map(blog => {
       if (blog.id === id) {
