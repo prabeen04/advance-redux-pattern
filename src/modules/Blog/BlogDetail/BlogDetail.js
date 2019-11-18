@@ -33,8 +33,8 @@ export default function BlogDetail(props) {
     dispatch(getBlogById(blogId));
   }, [blogId, id]);
 
-  async function handleUpdate(blog) {
-    await dispatch(updateBlog(blog.id, blog));
+  async function handleUpdate(id, blog) {
+    await dispatch(updateBlog(id, blog));
     setModalOpen(false);
   }
 
