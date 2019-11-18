@@ -9,7 +9,6 @@ export default function BlogModal(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const dispatch = useDispatch();
-
   useEffect(() => {
     if (!blog) return;
     setTitle(blog.title);

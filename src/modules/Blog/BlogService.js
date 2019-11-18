@@ -77,7 +77,7 @@ const BlogService = {
     await timeout(500);
     const finalBlog = blogs.map(blog => {
       if (blog.id === id) {
-        return data;
+        return { id, ...data };
       }
       return blog;
     });
