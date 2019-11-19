@@ -75,13 +75,8 @@ const BlogService = {
   },
   async updateBlog(id, data) {
     await timeout(500);
-    const finalBlog = blogs.map(blog => {
-      if (blog.id === id) {
-        return { id, ...data };
-      }
-      return blog;
-    });
-    return BlogModel.fromAll(finalBlog);
+    blogs.map(blog => (blog.id === id ? { id, ...data } : blog));
+    return data;
   }
 };
 export default BlogService;
