@@ -37,6 +37,7 @@ export default function BlogDetail(props) {
     await dispatch(updateBlog(id, blog));
     setModalOpen(false);
     dispatch(getBlogs());
+    dispatch(getBlogById(id));
   }
 
   if (!data) return <Loader loaderType="ellipsis" />;
