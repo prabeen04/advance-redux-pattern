@@ -80,7 +80,7 @@ export default function BlogDetail(props) {
           {isLoading ? (
             <Loader loaderType="ellipsis" />
           ) : (
-            <Card>
+            <BlogCard>
               <TitleHeader>
                 <BlogTitle>{data.title}</BlogTitle>
                 <div className="icon-container">
@@ -92,7 +92,7 @@ export default function BlogDetail(props) {
                 </div>
               </TitleHeader>
               <BlogDescription> {data.description}</BlogDescription>
-            </Card>
+            </BlogCard>
           )}
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={3}></Grid>
@@ -117,15 +117,17 @@ const HeaderContainer = styled.div`
   background-color: ${props => props.theme.backgroundColor};
   box-shadow: 0 1px 4px 1px ${props => props.theme.boxShadowColor};
 `;
-const TitleHeader = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 8px;
+const BlogCard = styled(Card)`
   &:hover {
     .icon-container {
       display: inline;
     }
   }
+`;
+const TitleHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
 `;
 
 const BlogTitle = styled.h1`
