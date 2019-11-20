@@ -83,7 +83,13 @@ export default function BlogDetail(props) {
             <Card>
               <TitleHeader>
                 <BlogTitle>{data.title}</BlogTitle>
-                <EditIcon onClick={() => setModalOpen(true)} />
+                <div className="icon-container">
+                  <EditIcon
+                    onClick={() => setModalOpen(true)}
+                    iconProps={{ fontSize: "12px" }}
+                    fontSize="12px"
+                  />
+                </div>
               </TitleHeader>
               <BlogDescription> {data.description}</BlogDescription>
             </Card>
@@ -115,7 +121,13 @@ const TitleHeader = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 8px;
+  &:hover {
+    .icon-container {
+      display: inline;
+    }
+  }
 `;
+
 const BlogTitle = styled.h1`
   font-size: 20px;
   font-weight: 400;
