@@ -25,7 +25,7 @@ export default function Blog(props) {
       <BlogWrapper>
         {data &&
           data.map((blog, i) => (
-            <BlogItem onClick={() => history.push(`/blog/${blog.id}`)}>
+            <BlogItem key={i} onClick={() => history.push(`/blog/${blog.id}`)}>
               <BlogTitle>{elipsize(blog.title, 15)}</BlogTitle>
               <Description>{elipsize(blog.description, 50)}</Description>
             </BlogItem>
