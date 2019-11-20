@@ -75,8 +75,8 @@ const BlogService = {
   },
   async updateBlog(id, data) {
     await timeout(500);
-    blogs.map(blog => (blog.id === id ? { id, ...data } : blog));
-    return data;
+    let editingIndex = blogs.findIndex(d => d.id === id);
+    blogs.splice(editingIndex, 1, { id, ...data });
   }
 };
 export default BlogService;

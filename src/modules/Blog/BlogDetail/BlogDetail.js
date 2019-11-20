@@ -37,6 +37,7 @@ export default function BlogDetail(props) {
     await dispatch(updateBlog(id, blog));
     setModalOpen(false);
     dispatch(getBlogs());
+    dispatch(getBlogById(id));
   }
 
   if (!data) return <Loader loaderType="ellipsis" />;
@@ -79,13 +80,19 @@ export default function BlogDetail(props) {
           {isLoading ? (
             <Loader loaderType="ellipsis" />
           ) : (
-            <Card>
+            <BlogCard>
               <TitleHeader>
                 <BlogTitle>{data.title}</BlogTitle>
-                <EditIcon onClick={() => setModalOpen(true)} />
+                <div className="icon-container">
+                  <EditIcon
+                    onClick={() => setModalOpen(true)}
+                    iconProps={{ fontSize: "12px" }}
+                    fontSize="12px"
+                  />
+                </div>
               </TitleHeader>
               <BlogDescription> {data.description}</BlogDescription>
-            </Card>
+            </BlogCard>
           )}
         </Grid>
         <Grid item xs={12} sm={12} md={6} lg={3}></Grid>
@@ -110,11 +117,19 @@ const HeaderContainer = styled.div`
   background-color: ${props => props.theme.backgroundColor};
   box-shadow: 0 1px 4px 1px ${props => props.theme.boxShadowColor};
 `;
+const BlogCard = styled(Card)`
+  &:hover {
+    .icon-container {
+      display: inline;
+    }
+  }
+`;
 const TitleHeader = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 8px;
 `;
+
 const BlogTitle = styled.h1`
   font-size: 20px;
   font-weight: 400;
