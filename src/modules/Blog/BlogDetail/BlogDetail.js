@@ -9,7 +9,8 @@ import {
   KeyboardReturnIcon,
   ArrowBackIosIcon,
   ArrowForwardIosIcon,
-  EditIcon
+  EditIcon,
+  SettingsIcon
 } from "../../../components/Icons/Icons";
 import Card from "../../../components/UI/Layout/Card";
 import BlogMenu from "./BlogMenu";
@@ -85,6 +86,12 @@ export default function BlogDetail(props) {
                 <BlogTitle>{data.title}</BlogTitle>
                 <div className="icon-container">
                   <EditIcon
+                    onClick={() => setModalOpen(true)}
+                    iconProps={{ fontSize: "12px" }}
+                    fontSize="12px"
+                  />
+                  &nbsp;
+                  <SettingsIcon
                     onClick={() => setModalOpen(true)}
                     iconProps={{ fontSize: "12px" }}
                     fontSize="12px"

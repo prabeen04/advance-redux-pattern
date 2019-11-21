@@ -5,7 +5,8 @@ import {
   ArrowForwardIos,
   KeyboardReturn,
   LabelImportant,
-  Edit
+  Edit,
+  Settings
 } from "@material-ui/icons";
 
 function DefaultIcon(props) {
@@ -19,6 +20,7 @@ function DefaultIcon(props) {
 function generateIcon(IconComponent) {
   return props => {
     const { iconProps = {}, ...restProps } = props;
+    debugger;
     return (
       <DefaultIcon {...restProps}>
         <IconComponent fontSize={"18px"} {...iconProps} />
@@ -32,11 +34,12 @@ export const ArrowForwardIosIcon = generateIcon(ArrowForwardIos);
 export const KeyboardReturnIcon = generateIcon(KeyboardReturn);
 export const LabelImportantIcon = generateIcon(LabelImportant);
 export const EditIcon = generateIcon(Edit);
+export const SettingsIcon = generateIcon(Settings);
 
 const IconWrapper = styled.span`
   opacity: ${props => (props.onClick && !props.disabled ? 1 : 0.3)};
   cursor: ${props => (props.onClick && !props.disabled ? "pointer" : "")};
   &:hover {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 `;
