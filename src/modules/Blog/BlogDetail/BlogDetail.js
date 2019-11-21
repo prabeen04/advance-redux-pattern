@@ -90,6 +90,7 @@ export default function BlogDetail(props) {
                     iconProps={{ fontSize: "12px" }}
                     fontSize="12px"
                   />
+                  &nbsp;
                   <SettingsIcon
                     onClick={() => setModalOpen(true)}
                     iconProps={{ fontSize: "12px" }}

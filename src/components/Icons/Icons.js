@@ -20,6 +20,7 @@ function DefaultIcon(props) {
 function generateIcon(IconComponent) {
   return props => {
     const { iconProps = {}, ...restProps } = props;
+    debugger;
     return (
       <DefaultIcon {...restProps}>
         <IconComponent fontSize={"18px"} {...iconProps} />
@@ -39,6 +40,6 @@ const IconWrapper = styled.span`
   opacity: ${props => (props.onClick && !props.disabled ? 1 : 0.3)};
   cursor: ${props => (props.onClick && !props.disabled ? "pointer" : "")};
   &:hover {
-    opacity: 0.8;
+    opacity: 0.7;
   }
 `;
