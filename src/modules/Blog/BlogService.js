@@ -57,7 +57,9 @@ const blogs = [
        software like Aldus PageMaker including versions of Lorem Ipsum.`
   }
 ];
+
 const timeout = ms => new Promise(r => setTimeout(r, ms));
+
 const BlogService = {
   async getBlog() {
     await timeout(500);
@@ -79,4 +81,5 @@ const BlogService = {
     blogs.splice(editingIndex, 1, { id, ...data });
   }
 };
+
 export default BlogService;
