@@ -5,7 +5,8 @@ import { createReducers } from "./utils/createReducers";
 import {
   GET_BLOGS,
   GET_BLOG_BY_ID,
-  CREATE_BLOG
+  CREATE_BLOG,
+  UPDATE_BLOG
 } from "../modules/Blog/BlogActionTypes";
 
 export const STATES = {
@@ -16,7 +17,8 @@ export const rootReducer = combineReducers({
   [STATES.BLOG]: combineReducers({
     list: createReducers(GET_BLOGS),
     read: createReducers(GET_BLOG_BY_ID),
-    create: createReducers(CREATE_BLOG)
+    create: createReducers(CREATE_BLOG),
+    update: createReducers(UPDATE_BLOG)
   })
 });
 
