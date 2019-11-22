@@ -9,6 +9,7 @@ import IconButton from "@material-ui/core/IconButton";
 import CloseIcon from "@material-ui/icons/Close";
 import Typography from "@material-ui/core/Typography";
 import styled from "styled-components";
+import { CircularProgress } from "@material-ui/core";
 
 const styles = theme => ({
   root: {
@@ -82,7 +83,7 @@ export default function StyledModal(props) {
               color="primary"
               disabled={props.disabled}
             >
-              submit
+              {props.isLoading ? <CircularProgress size={20} /> : "Submit"}
             </Button>
           )}
         </StyledDialogActions>
