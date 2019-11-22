@@ -81,7 +81,7 @@ export default function StyledModal(props) {
               variant="contained"
               onClick={props.onSubmit}
               color="primary"
-              disabled={props.disabled}
+              disabled={props.disabled || props.isLoading}
             >
               {props.isLoading ? <CircularProgress size={20} /> : "Submit"}
             </Button>

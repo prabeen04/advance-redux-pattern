@@ -3,13 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import StyledModal from "../../../components/UI/MUI/StyledModal";
 import { createBlog, getBlogs } from "../BlogAction";
 import InputComponent from "../../../components/Forms/InputComponent";
-import { selectUpdateBlogState } from "../BlogSelector";
+import { selectUpdateBlogState, selectCreateBlogState } from "../BlogSelector";
 
 export default function BlogModal(props) {
   const { open, toggle, blog, isEditing, onUpdate } = props;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const { isLoading } = useSelector(selectUpdateBlogState);
+  const { isLoading: creatingBlog } = useSelector(selectCreateBlogState);
   const dispatch = useDispatch();
   useEffect(() => {
     if (!blog) return;
@@ -35,7 +36,7 @@ export default function BlogModal(props) {
         onSubmit={
           isEditing ? () => onUpdate(blog.id, { title, description }) : addBlog
         }
-        isLoading={isLoading}
+        isLoading={isLoading || creatingBlog}
         disabled={!title || !description}
       >
         <div>
