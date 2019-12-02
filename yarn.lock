@@ -10587,10 +10587,10 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
-web-spotlight@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/web-spotlight/-/web-spotlight-0.0.3.tgz#bb340c14c8d2ed95f66eda879f13a05c3ca7fb7c"
-  integrity sha512-OcsbEz2h0t+eA5H39pRYqnbAQPcc6R5gx/bIBEoW9Xlj78WGwHFbJqlxXFy4BbvhoXYqR4FfPHglBxgXeVYDvA==
+web-spotlight@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/web-spotlight/-/web-spotlight-0.0.4.tgz#4f19cc2be6c20d90e2b5ff1db470d85074969c95"
+  integrity sha512-moxVQYi00pFkK6kSd25REnOOOxe9c12ee5wG3z8Au8FhhixfBGoLf6eGn2A6h7W3Rbz1+wn/18qK79qK2+9vIg==
 
 webidl-conversions@^4.0.2:
   version "4.0.2"
