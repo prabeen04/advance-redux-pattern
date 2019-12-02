@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { CurveyBackgroundHeader } from "../../components/UI/Layout";
 import { JumpStartBox } from "../../components/UI/Elements";
+import { getHTML, explore } from "web-spotlight";
 export default function Home() {
   return (
     <div style={{ position: "relative" }}>
@@ -11,6 +12,7 @@ export default function Home() {
         <JumpStartBox value={28} title="Total wins" />
         <JumpStartBox value={5} title="Total lost" />
       </JSWrapper>
+      {explore()}
     </div>
   );
 }
