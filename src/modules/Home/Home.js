@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { CurveyBackgroundHeader } from "../../components/UI/Layout";
 import { JumpStartBox } from "../../components/UI/Elements";
-// import * as test from "web-spotlight";
 export default function Home() {
   console.log(test)
   return (
@@ -13,7 +12,6 @@ export default function Home() {
         <JumpStartBox value={28} title="Total wins" />
         <JumpStartBox value={5} title="Total lost" />
       </JSWrapper>
-      {/* {test.explore()} */}
     </div>
   );
 }
