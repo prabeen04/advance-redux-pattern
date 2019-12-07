@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { CurveyBackgroundHeader } from "../../components/UI/Layout";
 import { JumpStartBox } from "../../components/UI/Elements";
 export default function Home() {
-  console.log(test)
   return (
     <div style={{ position: "relative" }}>
       <CurveyBackgroundHeader />
