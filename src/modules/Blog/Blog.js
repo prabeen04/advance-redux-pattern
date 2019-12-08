@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import { selectAllBlogs } from "./BlogSelector";
-import { getBlogs } from "./BlogAction";
-import { elipsize } from "../../utils/commonFns";
-import Loader from "../../components/UI/Layout/Loader";
-import FloatingButton from "../../components/UI/MUI/FloatingButton";
-import BlogModal from "./BlogModal/BlogModal";
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { selectAllBlogs } from './BlogSelector';
+import { getBlogs } from './BlogAction';
+import { elipsize } from '../../utils/commonFns';
+import Loader from '../../components/UI/Layout/Loader';
+import FloatingButton from '../../components/UI/MUI/FloatingButton';
+import BlogModal from './BlogModal/BlogModal';
 
 export default function Blog(props) {
   const { data, isLoading } = useSelector(selectAllBlogs);
@@ -55,6 +55,7 @@ const BlogItem = styled.div`
   padding: 0.5rem;
   margin: 0.3rem;
   cursor: pointer;
+  border: 1px solid rgb(20, 184, 29);
   &:hover {
     box-shadow: 0 1px 4px 1px ${props => props.theme.boxShadowColor};
   }
@@ -75,7 +76,7 @@ const BlogTitle = styled.h1`
   letter-spacing: 2px;
   padding: 0.2rem 0.4rem;
   margin-bottom: 0.3rem;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgb(20, 184, 29);
 `;
 
 const Description = styled.p`
