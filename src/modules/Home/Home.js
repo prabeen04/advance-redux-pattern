@@ -2,31 +2,15 @@ import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components';
 import { CurveyBackgroundHeader } from '../../components/UI/Layout';
 import { JumpStartBox } from '../../components/UI/Elements';
-import { getHTML } from 'web-spotlight';
+import { getHTML, Component } from 'web-spotlight';
 export default function Home() {
   let ref = useRef(null);
   const newElement = (
     <div>
-      <h1>HTML ELEMENT</h1>
-      <h1>HTML ELEMENT</h1>
-      <h1>HTML ELEMENT</h1>
-      <h1>HTML ELEMENT</h1>
-      <h1>HTML ELEMENT</h1>
-      <h1>HTML ELEMENT</h1>
-      <h1>HTML ELEMENT</h1>
-      <h1>HTML ELEMENT</h1>
-      <h1>HTML ELEMENT</h1>
-      <h1>HTML ELEMENT</h1>
-      <h1>HTML ELEMENT</h1>
-      <h1>HTML ELEMENT</h1>
+      <h1>FROM ADVANCED REACT PATTERN</h1>
     </div>
   );
-  useEffect(() => {
-    if (!ref.current) return;
-    console.log(ref.current);
-    ref.current.innerHTML = String(newElement);
-  }, [ref]);
-  debugger;
+
   return (
     <div style={{ position: 'relative' }}>
       <CurveyBackgroundHeader />
@@ -35,8 +19,9 @@ export default function Home() {
         <JumpStartBox value={28} title="Total wins" />
         <JumpStartBox value={5} title="Total lost" />
       </JSWrapper>
-      <div ref={ref}></div>
-      {ref.current && getHTML(ref.current, <h1>HTML ELEMENT</h1>)}
+      <div ref={ref}>sdogj</div>
+      <Component component={newElement} />
+      {ref.current && getHTML(ref.current, <h1>agadgsdgsdg</h1>)}
     </div>
   );
 }
