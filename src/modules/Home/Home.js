@@ -1,8 +1,8 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components';
 import { CurveyBackgroundHeader } from '../../components/UI/Layout';
 import { JumpStartBox } from '../../components/UI/Elements';
-import { getHTML, Component } from 'web-spotlight';
+import { Spotlight } from 'web-spotlight';
 export default function Home() {
   let ref = useRef(null);
   const newElement = (
@@ -20,8 +20,7 @@ export default function Home() {
         <JumpStartBox value={5} title="Total lost" />
       </JSWrapper>
       <div ref={ref}>sdogj</div>
-      <Component component={newElement} />
-      {ref.current && getHTML(ref.current, <h1>agadgsdgsdg</h1>)}
+      <Spotlight component={newElement} />
     </div>
   );
 }
