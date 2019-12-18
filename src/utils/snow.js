@@ -35,14 +35,14 @@ var snowingzone = 1;
 ///////////////////////////////////////////////////////////////////////////
 
 // Do not edit below this line
-var snow = new Array();
+var snow = [];
 var marginbottom;
 var marginright;
 var timer;
 var i_snow = 0;
-var x_mv = new Array();
-var crds = new Array();
-var lftrght = new Array();
+var x_mv = [];
+var crds = [];
+var lftrght = [];
 var browserinfos = navigator.userAgent;
 var ie5 =
   document.all && document.getElementById && !browserinfos.match(/Opera/);
@@ -75,17 +75,17 @@ function initsnow() {
     snow[i].style.color = snowcolor[randommaker(snowcolor.length)];
     snow[i].style.zIndex = 1000;
     snow[i].sink = (sinkspeed * snow[i].size) / 5;
-    if (snowingzone == 1) {
+    if (snowingzone === 1) {
       snow[i].posx = randommaker(marginright - snow[i].size);
     }
-    if (snowingzone == 2) {
+    if (snowingzone === 2) {
       snow[i].posx = randommaker(marginright / 2 - snow[i].size);
     }
-    if (snowingzone == 3) {
+    if (snowingzone === 3) {
       snow[i].posx =
         randommaker(marginright / 2 - snow[i].size) + marginright / 4;
     }
-    if (snowingzone == 4) {
+    if (snowingzone === 4) {
       snow[i].posx =
         randommaker(marginright / 2 - snow[i].size) + marginright / 2;
     }
@@ -109,17 +109,17 @@ function movesnow() {
       snow[i].posy >= marginbottom - 2 * snow[i].size ||
       parseInt(snow[i].style.left) > marginright - 3 * lftrght[i]
     ) {
-      if (snowingzone == 1) {
+      if (snowingzone === 1) {
         snow[i].posx = randommaker(marginright - snow[i].size);
       }
-      if (snowingzone == 2) {
+      if (snowingzone === 2) {
         snow[i].posx = randommaker(marginright / 2 - snow[i].size);
       }
-      if (snowingzone == 3) {
+      if (snowingzone === 3) {
         snow[i].posx =
           randommaker(marginright / 2 - snow[i].size) + marginright / 4;
       }
-      if (snowingzone == 4) {
+      if (snowingzone === 4) {
         snow[i].posx =
           randommaker(marginright / 2 - snow[i].size) + marginright / 2;
       }
