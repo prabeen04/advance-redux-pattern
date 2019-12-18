@@ -1,10 +1,10 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { CurveyBackgroundHeader } from '../../components/UI/Layout';
 import { JumpStartBox } from '../../components/UI/Elements';
 import { Spotlight } from 'web-spotlight';
+import { snowStorm } from '../../utils/snow';
 export default function Home() {
-  let ref = useRef(null);
   const newElement = (
     <div>
       <h1>FROM ADVANCED REACT PATTERN</h1>
@@ -13,14 +13,14 @@ export default function Home() {
 
   return (
     <div style={{ position: 'relative' }}>
+      {snowStorm(window, document)}
       <CurveyBackgroundHeader />
       <JSWrapper>
         <JumpStartBox value={300} title="Goals scored" />
         <JumpStartBox value={28} title="Total wins" />
         <JumpStartBox value={5} title="Total lost" />
       </JSWrapper>
-      <div ref={ref}>sdogj</div>
-      <Spotlight component={newElement} />
+      {/* <Spotlight component={newElement} /> */}
     </div>
   );
 }
