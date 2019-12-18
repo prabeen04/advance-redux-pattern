@@ -38,8 +38,6 @@ var snowingzone = 1;
 var snow = [];
 var marginbottom;
 var marginright;
-var timer;
-var i_snow = 0;
 var x_mv = [];
 var crds = [];
 var lftrght = [];
@@ -48,7 +46,6 @@ var ie5 =
   document.all && document.getElementById && !browserinfos.match(/Opera/);
 var ns6 = document.getElementById && !document.all;
 var opera = browserinfos.match(/Opera/);
-var browserok = ie5 || ns6 || opera;
 
 function randommaker(range) {
   let rand = Math.floor(range * Math.random());
@@ -126,7 +123,6 @@ function movesnow() {
       snow[i].posy = 0;
     }
   }
-  var timer = setTimeout('movesnow()', 50);
 }
 
 for (let i = 0; i <= snowmax; i++) {
