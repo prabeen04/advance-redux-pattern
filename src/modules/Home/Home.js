@@ -1,10 +1,9 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { CurveyBackgroundHeader } from '../../components/UI/Layout';
 import { JumpStartBox } from '../../components/UI/Elements';
 import { Spotlight } from 'web-spotlight';
 export default function Home() {
-  let ref = useRef(null);
   const newElement = (
     <div>
       <h1>FROM ADVANCED REACT PATTERN</h1>
@@ -19,8 +18,7 @@ export default function Home() {
         <JumpStartBox value={28} title="Total wins" />
         <JumpStartBox value={5} title="Total lost" />
       </JSWrapper>
-      <div ref={ref}>sdogj</div>
-      <Spotlight component={newElement} />
+      {/* <Spotlight component={newElement} /> */}
     </div>
   );
 }
