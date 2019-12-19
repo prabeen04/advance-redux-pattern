@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { CurveyBackgroundHeader } from '../../components/UI/Layout';
 import { JumpStartBox } from '../../components/UI/Elements';
 import { Spotlight } from 'web-spotlight';
-import { snowStorm } from '../../utils/snow';
+
 export default function Home() {
   const newElement = (
     <div>
@@ -13,7 +13,6 @@ export default function Home() {
 
   return (
     <div style={{ position: 'relative' }}>
-      {snowStorm(window, document)}
       <CurveyBackgroundHeader />
       <JSWrapper>
         <JumpStartBox value={300} title="Goals scored" />
