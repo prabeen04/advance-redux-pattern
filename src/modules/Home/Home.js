@@ -5,12 +5,6 @@ import { JumpStartBox } from '../../components/UI/Elements';
 import { Spotlight } from 'web-spotlight';
 
 export default function Home() {
-  const newElement = (
-    <div>
-      <h1>FROM ADVANCED REACT PATTERN</h1>
-    </div>
-  );
-
   return (
     <div style={{ position: 'relative' }}>
       <CurveyBackgroundHeader />
@@ -19,7 +13,6 @@ export default function Home() {
         <JumpStartBox value={28} title="Total wins" />
         <JumpStartBox value={5} title="Total lost" />
       </JSWrapper>
-      {/* <Spotlight component={newElement} /> */}
     </div>
   );
 }
