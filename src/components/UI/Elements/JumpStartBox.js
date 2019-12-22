@@ -50,6 +50,7 @@ const JumpStartWrapper = styled.div`
   display: flex;
   flex-direction: column;
   z-index: inherit;
+  border: 1px solid cyan;
   @media (max-width: 600px) {
     width: 90% !important;
   }
@@ -57,17 +58,20 @@ const JumpStartWrapper = styled.div`
 const Value = styled.h1`
   color: ${props => props.theme.titleColor};
   font-size: 1.3rem;
+  border: 1px solid red;
 `;
 const Title = styled.p`
   color: ${props => props.theme.subTitleColor};
   font-size: 0.8rem;
   margin: 0.3rem 0;
   letter-spacing: 2px;
+  border: 1px solid yellow;
 `;
 const Progress = styled.div`
   display: flex;
   align-items: center;
   color: ${props => (props.down ? props.theme.red : props.theme.lightGreen)};
+  border: 1px solid green;
 `;
 const ProgressDown = styled(ArrowDownward)`
   color: ${props => props.theme.red};
@@ -76,12 +80,14 @@ const ProgressUp = styled(ArrowUpward)`
   color: ${props => props.theme.lightGreen};
 `;
 const Container = styled.div`
-  height: inherit;
+  height: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 1px solid navy;
 `;
 
 const ChartContainer = styled(ResponsiveContainer)`
   margin-left: 1.5rem;
+  border: 1px solid orange;
 `;
