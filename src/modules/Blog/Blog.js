@@ -55,7 +55,6 @@ const BlogItem = styled.div`
   padding: 0.5rem;
   margin: 0.3rem;
   cursor: pointer;
-  border: 1px solid rgb(20, 184, 29);
   &:hover {
     box-shadow: 0 1px 4px 1px ${props => props.theme.boxShadowColor};
   }
@@ -72,11 +71,10 @@ const BlogItem = styled.div`
 const BlogTitle = styled.h1`
   display: flex;
   color: ${props => props.theme.titleColor};
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 2px;
-  padding: 0.2rem 0.4rem;
+  padding: 0.2rem 0.2rem;
   margin-bottom: 0.3rem;
-  background-color: rgb(20, 184, 29);
 `;
 
 const Description = styled.p`
