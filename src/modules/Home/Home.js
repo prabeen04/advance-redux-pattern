@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { CurveyBackgroundHeader } from '../../components/UI/Layout';
 import { JumpStartBox } from '../../components/UI/Elements';
-import { Spotlight } from 'web-spotlight';
 
 export default function Home() {
   return (
