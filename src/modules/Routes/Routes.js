@@ -1,9 +1,9 @@
-import React from "react";
-import { Switch, Route } from "react-router-dom";
-import Blog from "../Blog/Blog";
-import Home from "../Home/Home";
-import BlogDetail from "../Blog/BlogDetail/BlogDetail";
-import Concurrent from "../Concurrent/Concurrent";
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Blog from '../Blog/Blog';
+import Home from '../Home/Home';
+import BlogDetail from '../Blog/BlogDetail/BlogDetail';
+import Concurrent from '../Concurrent/Concurrent';
 
 export default function Routes() {
   return (
