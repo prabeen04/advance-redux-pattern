@@ -1,3 +1,10 @@
-.icon-container {
-    display: none;
+.jumpstart-wrapper {
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.theme-switch-wrapper {
+  float: right;
 }

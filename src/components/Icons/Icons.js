@@ -1,5 +1,5 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 import {
   ArrowBackIos,
   ArrowForwardIos,
@@ -7,7 +7,8 @@ import {
   LabelImportant,
   Edit,
   Settings
-} from "@material-ui/icons";
+} from '@material-ui/icons';
+import { SvgIcon } from '@material-ui/core';
 
 function DefaultIcon(props) {
   const { disabled, onClick, ...rest } = props;
@@ -23,7 +24,20 @@ function generateIcon(IconComponent) {
     debugger;
     return (
       <DefaultIcon {...restProps}>
-        <IconComponent fontSize={"18px"} {...iconProps} />
+        <IconComponent fontSize={'18px'} {...iconProps} />
+      </DefaultIcon>
+    );
+  };
+}
+
+function generateFromSvgUrl(SVG) {
+  return props => {
+    const { iconProps = {}, fontSize, color, style, ...restProps } = props;
+    return (
+      <DefaultIcon {...restProps}>
+        <SvgIcon style={{ fontSize, color, ...style }} {...iconProps}>
+          <SVG />
+        </SvgIcon>
       </DefaultIcon>
     );
   };
@@ -38,7 +52,7 @@ export const SettingsIcon = generateIcon(Settings);
 
 const IconWrapper = styled.span`
   opacity: ${props => (props.onClick && !props.disabled ? 1 : 0.3)};
-  cursor: ${props => (props.onClick && !props.disabled ? "pointer" : "")};
+  cursor: ${props => (props.onClick && !props.disabled ? 'pointer' : '')};
   &:hover {
     opacity: 0.7;
   }
